@@ -1,0 +1,25 @@
+<%= form_for(@diary_entry) do |f| %>
+  <% if @diary_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@diary_entry.errors.count, "error") %> prohibited this diary_entry from being saved:</h2>
+
+      <ul>
+      <% @diary_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :food %><br>
+    <%= f.text_field :food %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

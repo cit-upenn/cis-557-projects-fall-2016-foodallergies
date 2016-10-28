@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Diary Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diary_entries.each do |diary_entry| %>
+      <tr>
+        <td><%= diary_entry.food %></td>
+        <td><%= diary_entry.amount %></td>
+        <td><%= link_to 'Show', diary_entry %></td>
+        <td><%= link_to 'Edit', edit_diary_entry_path(diary_entry) %></td>
+        <td><%= link_to 'Destroy', diary_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diary entry', new_diary_entry_path %>
