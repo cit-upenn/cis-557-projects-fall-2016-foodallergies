@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Food Diary</h1>
+<h1>Listing Diary Entries</h1>
 
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
       <th>Food</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= diary_entry.food %></td>
         <td><%= diary_entry.amount %></td>
-        <td><%= link_to 'Show', diary_entry, :class => 'btn btn-default btn-xs btn-block' %></td>
-        <td><%= link_to 'Edit', edit_diary_entry_path(diary_entry), :class => 'btn btn-default btn-xs btn-block' %></td>
-        <td><%= link_to 'Delete', diary_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs btn-block' %></td>
+        <td><%= link_to 'Show', diary_entry %></td>
+        <td><%= link_to 'Edit', edit_diary_entry_path(diary_entry) %></td>
+        <td><%= link_to 'Destroy', diary_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Diary Entry', new_diary_entry_path, :class => 'btn btn-success' %>
+<%= link_to 'New Diary entry', new_diary_entry_path %>
