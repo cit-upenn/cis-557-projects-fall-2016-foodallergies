@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head class="navbar navbar-fixed-top navbar-inverse">
   <title>FoodAllergyTracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
 	<%= render 'layouts/navigation'%>
 	<div id="main-container" class="container">
+<<<<<<< HEAD
 		<div class="row">
 			<!-- <div class="col-xs-3"> -->
 				<!-- <h3> Comments </h3> -->
@@ -17,9 +19,11 @@
 			<%= yield %>
 			</div>
 		</div>
+=======
+		<%= yield %>
+		<%= render 'layouts/footer' %>
+>>>>>>> static-pages
 	</div>
-
-
 
 </body>
 </html>
