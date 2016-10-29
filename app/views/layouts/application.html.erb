@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render 'layouts/navigation'%>
+	<div id="main-container" class="container">
+		<div class="row">
+			<div class="col-xs-3">
+				<h3> Comments </h3>
+			</div>
+			<div class="col-xs-9">
+			<%= yield %>
+			</div>
+		</div>
+	</div>
 
-<%= yield %>
+
 
 </body>
 </html>
