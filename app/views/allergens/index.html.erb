@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Allergens</h1>
+<h1>Allergens Table</h1>
+<h5>Preliminarily, we can only add new allergen and cann't edit or delete existing ones</h5>
 
-<table>
+<table class="table table-responsive">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Allergen</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +15,9 @@
     <% @allergens.each do |allergen| %>
       <tr>
         <td><%= allergen.name %></td>
-        <td><%= link_to 'Show', allergen %></td>
-        <td><%= link_to 'Edit', edit_allergen_path(allergen) %></td>
-        <td><%= link_to 'Destroy', allergen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', allergen, class: "btn btn-success btn" %></td>
+<!--         <td><%= link_to 'Edit', edit_allergen_path(allergen) %></td>
+        <td><%= link_to 'Destroy', allergen, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Allergen', new_allergen_path %>
+<%= link_to 'New Allergen', new_allergen_path, class: "btn btn-success btn-lg"%>
