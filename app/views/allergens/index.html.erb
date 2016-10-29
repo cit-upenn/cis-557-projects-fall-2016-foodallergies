@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Allergens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allergens.each do |allergen| %>
+      <tr>
+        <td><%= allergen.name %></td>
+        <td><%= link_to 'Show', allergen %></td>
+        <td><%= link_to 'Edit', edit_allergen_path(allergen) %></td>
+        <td><%= link_to 'Destroy', allergen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Allergen', new_allergen_path %>
