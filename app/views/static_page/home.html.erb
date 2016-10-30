@@ -12,9 +12,10 @@
     This is the home page!
   </h2>
 
-  <%= link_to "New Entry to Diary", '#', class: "btn btn-lg btn-primary" %>
-  <%= link_to "Look up Food", '#', class: "btn btn-lg btn-primary" %>
-  <%= link_to "Download Food Diary", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to "New Entry to Diary", diary_entries_path, class: "btn btn-md btn-primary" %>
+  <%= link_to "Look up Food", foods_path, class: "btn btn-md btn-primary" %>
+  <%= link_to "Look up Allergens", allergens_path, class: "btn btn-md btn-primary" %>
+  <%= link_to "Download Food Diary", '#', class: "btn btn-md btn-primary" %>
 
   </div>
 
