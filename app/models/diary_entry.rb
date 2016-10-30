@@ -10,4 +10,5 @@
 #
 
 class DiaryEntry < ActiveRecord::Base
+	validates :food, :presence => true
 end
