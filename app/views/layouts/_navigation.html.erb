@@ -1,7 +1,11 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/"> Back to Home</a>
+			<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Home", static_page_home_path %></li>
+            <li><%= link_to "Help", static_page_help_path %></li>
+            <li><%= link_to "Sign Up", users_path  %></li>
+            </ul>
 		</div>
 	</div>
 </div>

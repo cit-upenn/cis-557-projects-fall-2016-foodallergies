@@ -19,6 +19,14 @@
     <%= f.label :product_barcode %><br>
     <%= f.number_field :product_barcode %>
   </div>
+  <div class="field">
+    <%= f.label :allergen_id %><br>
+    <%= collection_select :food, :allergen_ids, Allergen.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :allergen_id %><br>
+    <%= collection_select :food, :allergen_ids, Allergen.all, :id, :name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
