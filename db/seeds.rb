@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Allergen.create(name: 'Soy')
+Allergen.create(name: 'Diary')
+Allergen.create(name: 'Eggs')
+Allergen.create(name: 'Seafood')
+Allergen.create(name: 'Shellfish')
+Allergen.create(name: 'Wheat')
+Allergen.create(name: 'Gluten')
+Allergen.create(name: 'Nuts and treenuts')
