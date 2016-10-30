@@ -12,3 +12,9 @@ Scenario: Add an allergen without a name
 	When I add a nonexisted allergen without a name to the database
 	Then show me the page
 	Then I should be able to see some errors on the page
+
+Scenario: Add an existing allergen to the database
+	Given I'm on the add allergen page
+	When I add an existing allergen to the database
+	Then show me the page
+	Then I should be able to see some errors for adding a duplicate

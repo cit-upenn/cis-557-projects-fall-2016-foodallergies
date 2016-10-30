@@ -19,3 +19,7 @@ Scenario: Edit a food
 	Given I click the edit button of one food
 	When I change the name of the food
 	Then I should be able to see the food with new name
+
+Scenario: Delete a food
+	Given I click the delete button of one food
+	Then I should be able to see the food does not exist anymore

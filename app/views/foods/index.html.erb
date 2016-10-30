@@ -18,7 +18,7 @@
         <td><%= food.product_barcode %></td>
         <td><%= link_to 'Show', food, class: "btn btn-success btn" %></td>
         <td><%= link_to 'Edit', edit_food_path(food), class: "btn btn-warning"%></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%></td>
+        <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%></td>
       </tr>
     <% end %>
   </tbody>
