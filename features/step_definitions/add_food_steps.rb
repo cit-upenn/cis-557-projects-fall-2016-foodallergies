@@ -7,6 +7,6 @@ When(/^I add a nonexisted food to the data base$/) do
 	click_button 'Create Food'
 end
 
-Then(/^I should be able to add it$/) do 
+Then(/^I should be able to add a food$/) do 
 	assert page.has_content?("Food was successfully created.")
 end

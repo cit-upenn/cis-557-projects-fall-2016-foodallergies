@@ -7,4 +7,4 @@ Feature: User in the Food Database page
 Scenario: Add a food
 	Given I'm on the add food page
 	When I add a nonexisted food to the data base
-	Then I should be able to add it
+	Then I should be able to add a food
