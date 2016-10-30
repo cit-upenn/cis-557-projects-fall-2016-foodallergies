@@ -2,7 +2,7 @@
 
 <h1>Listing Diary Entries</h1>
 
-<table>
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Food</th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= diary_entry.food %></td>
         <td><%= diary_entry.amount %></td>
-        <td><%= link_to 'Show', diary_entry %></td>
-        <td><%= link_to 'Edit', edit_diary_entry_path(diary_entry) %></td>
-        <td><%= link_to 'Destroy', diary_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', diary_entry, class: "btn btn-success btn" %></td>
+        <td><%= link_to 'Edit', edit_diary_entry_path(diary_entry), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', diary_entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
