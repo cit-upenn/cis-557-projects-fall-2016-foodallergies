@@ -10,3 +10,11 @@ end
 Then(/^I should be able to add a food$/) do 
 	assert page.has_content?("Food was successfully created.")
 end
+
+When(/^I add a food without a name to the database$/) do 
+	click_button 'Create Food'
+end
+
+Then(/^I should see some errors on the page$/) do 
+	assert page.has_content?("Name can't be blank")
+end
