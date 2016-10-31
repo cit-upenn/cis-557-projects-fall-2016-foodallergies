@@ -8,6 +8,7 @@ Feature: User sign up page
 	Scenario: Add an user without username
 		Given I'm on the user sign up page
 		When I add a new user without username
+		Then show me the page
 		Then I can't create an user without username
 
 	Scenario: Add an user without email

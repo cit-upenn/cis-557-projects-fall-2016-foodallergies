@@ -3,8 +3,8 @@ Given (/^I'm on the user sign up page$/) do
 end
 
 When (/^I add a new user$/) do
-	fill_in 'Name', :with => "Tom"
-	fill_in 'Email', :with => "tom@seas.upenn.edu"
+	fill_in 'Name', :with => "YG"
+	fill_in 'Email', :with => "yg@seas.upenn.edu"
 	click_button 'Create User'
 end
 
@@ -13,7 +13,7 @@ Then (/^I should be able to see the userpage with user signing in$/) do
 end
 
 When (/^I add a new user without username$/) do
-	fill_in 'Email', :with => "tom@seas.upenn.edu"
+	fill_in 'Email', :with => "yg@seas.upenn.edu"
 	click_button 'Create User'
 end
 
@@ -22,7 +22,7 @@ Then (/^I can't create an user without username$/) do
 end
 
 When (/^I add a new user without email$/) do
-	fill_in 'Name', :with => "Tom"
+	fill_in 'Name', :with => "YG"
 	click_button 'Create User'
 end
 

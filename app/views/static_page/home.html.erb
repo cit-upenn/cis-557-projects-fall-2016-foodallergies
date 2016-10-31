@@ -6,16 +6,16 @@
   <body>
 
   <div class="center jumbotron">
-  <h1>Welcome to the Food Allergies Traker</h1>
+  <h1>
+    Welcome to the Food Allergies Traker <br>
+    <small>We help to manage your health!</small>
+  </h1>
+  <br>
 
-  <h2>
-    This is the home page!
-  </h2>
-
-  <%= link_to "New Entry to Diary", diary_entries_path, class: "btn btn-md btn-primary" %>
-  <%= link_to "Look up Food", foods_path, class: "btn btn-md btn-primary" %>
-  <%= link_to "Look up Allergens", allergens_path, class: "btn btn-md btn-primary" %>
-  <%= link_to "Download Food Diary", '#', class: "btn btn-md btn-primary" %>
+  <%= link_to "New Entry to Diary", diary_entries_path, class: "btn btn-md btn-primary active" %>
+  <%= link_to "Look up Food", foods_path, class: "btn btn-md btn-primary active" %>
+  <%= link_to "Look up Allergens", allergens_path, class: "btn btn-md btn-primary active" %>
+  <%= link_to "Download Food Diary", '#', class: "btn btn-md btn-primary active" %>
 
   </div>
 
