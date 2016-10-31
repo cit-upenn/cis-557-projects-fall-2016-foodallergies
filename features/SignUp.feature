@@ -1,4 +1,8 @@
 Feature: User sign up page
+
+  As a user
+  So that I can log in 
+  I want to sign up for Allergies Traker
 	
 	Scenario: Add an username
 		Given I'm on the user sign up page
