@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'static_page/home'
 
   get 'static_page/help'
 
-  resources :users
   resources :allergens
   resources :foods
   resources :diary_entries

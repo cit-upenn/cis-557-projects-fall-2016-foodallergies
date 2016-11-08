@@ -10,7 +10,8 @@
 <body>
 	<%= render 'layouts/navigation'%>
 	<div id="main-container" class="container">
-		
+		<p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 		<%= yield %>
 		<%= render 'layouts/footer' %>
 	</div>
