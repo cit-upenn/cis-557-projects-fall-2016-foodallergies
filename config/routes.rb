@@ -54,6 +54,9 @@
 #
 
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  resources :ingredients
+=======
   resources :weights
   root 'static_page#home'
 
@@ -61,6 +64,7 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }
 
+>>>>>>> 079648f85d5328fa4e050f4c0a212859ed89676b
   get 'static_page/home'
 
   get 'static_page/help'

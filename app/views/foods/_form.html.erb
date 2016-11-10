@@ -20,12 +20,8 @@
     <%= f.number_field :product_barcode %>
   </div>
   <div class="field">
-    <%= f.label :allergen_id %><br>
-    <%= collection_select :food, :allergen_ids, Allergen.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :allergen_id %><br>
-    <%= collection_select :food, :allergen_ids, Allergen.all, :id, :name %>
+    <%= f.label :ingredient_id %><br>
+    <%= collection_select :food, :ingredient_ids, Ingredient.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: allergens
+# Table name: ingredients
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -8,7 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-class Allergen < ActiveRecord::Base
-	validates :name, :presence => true, :uniqueness => true
-	has_and_belongs_to_many :ingredients
+class Ingredient < ActiveRecord::Base
+  validates :name, :presence => true, :uniqueness => true
+  has_and_belongs_to_many :foods
+  has_and_belongs_to_many :allergens
 end
