@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :amount %> <b>(g)</b><br>
-    <%= f.text_field :amount %>
+    <%= f.number_field :amount, class: :text_field, step: :any %>
   </div>
   <div class="actions">
     <%= f.submit %>
