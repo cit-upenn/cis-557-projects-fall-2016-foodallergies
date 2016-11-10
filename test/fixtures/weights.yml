@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: weights
+#
+#  id         :integer          not null, primary key
+#  weight     :float
+#  date       :date
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1.5
+  date: 2016-11-09
+
+two:
+  weight: 1.5
+  date: 2016-11-09

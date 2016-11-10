@@ -1,6 +1,14 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                       Controller#Action
+#                  weights GET    /weights(.:format)                weights#index
+#                          POST   /weights(.:format)                weights#create
+#               new_weight GET    /weights/new(.:format)            weights#new
+#              edit_weight GET    /weights/:id/edit(.:format)       weights#edit
+#                   weight GET    /weights/:id(.:format)            weights#show
+#                          PATCH  /weights/:id(.:format)            weights#update
+#                          PUT    /weights/:id(.:format)            weights#update
+#                          DELETE /weights/:id(.:format)            weights#destroy
 #                     root GET    /                                 static_page#home
 #         new_user_session GET    /users/sign_in(.:format)          users/sessions#new
 #             user_session POST   /users/sign_in(.:format)          users/sessions#create
@@ -46,6 +54,7 @@
 #
 
 Rails.application.routes.draw do
+  resources :weights
   root 'static_page#home'
 
   devise_for :users, controllers: {
