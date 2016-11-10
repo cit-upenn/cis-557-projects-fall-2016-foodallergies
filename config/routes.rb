@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ingredients
   get 'static_page/home'
 
   get 'static_page/help'

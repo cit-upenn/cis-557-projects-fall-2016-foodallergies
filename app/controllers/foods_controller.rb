@@ -1,3 +1,4 @@
+require 'pry'
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
@@ -28,6 +29,8 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
+        # binding.pry
+        @food.add_allergen(params[:food][:allergen_ids])
         format.html { redirect_to @food, notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
       else
@@ -68,7 +71,8 @@ class FoodsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #something is modified here
     def food_params
-      params.require(:food).permit(:name, :product_barcode, :allergen_ids)
+      params.require(:food).permit(:name, :product_barcode)
     end
 end
