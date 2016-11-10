@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109234037) do
+ActiveRecord::Schema.define(version: 20161110014532) do
 
   create_table "allergens", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +61,9 @@ ActiveRecord::Schema.define(version: 20161109234037) do
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "weights", ["user_id"], name: "index_weights_on_user_id"
 
 end

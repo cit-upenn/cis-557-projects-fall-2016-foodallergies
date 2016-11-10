@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
 Allergen.create(name: 'Soy')
 Allergen.create(name: 'Diary')
 Allergen.create(name: 'Eggs')
@@ -13,3 +15,5 @@ Allergen.create(name: 'Shellfish')
 Allergen.create(name: 'Wheat')
 Allergen.create(name: 'Gluten')
 Allergen.create(name: 'Nuts and treenuts')
+
+yanssie = User.create(email: 'yg@seas.upenn.edu', encrypted_password: 'duibuqi520')
