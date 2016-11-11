@@ -22,6 +22,9 @@ end
 When(/^I add an existing allergen to the database$/) do
 	fill_in 'Name', :with => "Egg"
 	click_button 'Create Allergen'
+	visit("/allergens/new")
+	fill_in 'Name', :with => "Egg"
+	click_button 'Create Allergen'
 end
 
 Then(/^I should be able to see some errors for adding a duplicate$/) do
