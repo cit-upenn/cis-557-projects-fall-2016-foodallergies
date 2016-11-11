@@ -6,14 +6,14 @@ Feature: User in the Food Database page
 
 Scenario: Add a food
 	Given I'm on the add food page
-	When I add a nonexisted food to the data base
+	When I add a nonexistent food to the data base
 	Then I should be able to add a food
 
 Scenario: Add food without a name
 	Given I'm on the add food page
 	When I add a food without a name to the database
 	Then show me the page
-	Then I should see some errors on the page
+	Then I should see some errors on the food page
 
 Scenario: Edit a food
 	Given I click the edit button of one food
@@ -23,3 +23,8 @@ Scenario: Edit a food
 Scenario: Delete a food
 	Given I click the delete button of one food
 	Then I should be able to see the food does not exist anymore
+
+	Scenario: Add new food to the database with first letter no capitalized
+		Given I'm on the add food page
+		When I add a new food whose first letter is not capitalized to the database
+		Then I should be able to see some errors for adding these bad format food
