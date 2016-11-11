@@ -22,6 +22,9 @@ end
 When(/^I add an existing ingredient to the database$/) do
 	fill_in 'Name', :with => "Trinitrotolune"
 	click_button 'Create Ingredient'
+	visit("/ingredients/new")
+	fill_in 'Name', :with => "Trinitrotolune"
+	click_button 'Create Ingredient'
 end
 
 Then(/^I should be able to see some errors for adding a duplicate ingredient$/) do
