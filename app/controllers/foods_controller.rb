@@ -30,7 +30,7 @@ class FoodsController < ApplicationController
     respond_to do |format|
       if @food.save
         # binding.pry
-        @food.add_allergen(params[:food][:allergen_ids])
+        # @food.add_allergen(params[:food][:allergen_ids])
         format.html { redirect_to @food, notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
       else
