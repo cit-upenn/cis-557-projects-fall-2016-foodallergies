@@ -28,3 +28,8 @@ Scenario: Delete a food
 		Given I'm on the add food page
 		When I add a new food whose first letter is not capitalized to the database
 		Then I should be able to see some errors for adding these bad format food
+
+	Scenario: Add new food to the database with same product barcode
+		Given I'm on the add food page
+		When I add a new food whose barcode is identical to an existing food
+		Then I should be able to see some error for adding duplicate barcode

@@ -11,7 +11,7 @@
 
 class Food < ActiveRecord::Base
 	validates :name, :presence => true
-	validates :product_barcode, :uniqueness =>true
+	validates :product_barcode, :numericality => true, :uniqueness =>true
 	has_and_belongs_to_many :ingredients
 	has_many :allergens , through: :ingredients
 
