@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select(:time, :default => { :minute => 00 }) %>
+  </div>
+  <div class="field">
+    <%= f.label :meal %><br>
+    <%= f.text_field :meal %>
+  </div>
+  <div class="field">
     <%= f.label :food %><br>
     <%= f.text_field :food %>
   </div>
   <div class="field">
     <%= f.label :amount %> <b>(g)</b><br>
-    <%= f.number_field :amount, class: :text_field, step: :any %>
+    <%= f.text_field :amount %>
   </div>
   <div class="actions">
     <%= f.submit %>

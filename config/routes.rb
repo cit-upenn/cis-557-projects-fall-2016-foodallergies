@@ -55,6 +55,7 @@
 
 Rails.application.routes.draw do
 
+  resources :diary_entries
   root 'static_page#home'
   
   resources :ingredients
@@ -72,7 +73,6 @@ Rails.application.routes.draw do
 
   resources :allergens
   resources :foods
-  resources :diary_entries
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

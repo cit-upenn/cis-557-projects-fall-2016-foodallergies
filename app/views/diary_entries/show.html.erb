@@ -1,15 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Time:</strong>
+  <%= @diary_entry.time %>
+</p>
+
+<p>
+  <strong>Meal:</strong>
+  <%= @diary_entry.meal %>
+</p>
+
+<p>
   <strong>Food:</strong>
   <%= @diary_entry.food %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>Amount (g):</strong>
   <%= @diary_entry.amount %>
 </p>
 
-<%= link_to 'Edit', edit_diary_entry_path(@diary_entry)%> |
-<%= link_to 'Back', diary_entries_path%>
-
+<%= link_to 'Edit', edit_diary_entry_path(@diary_entry) %> |
+<%= link_to 'Back', diary_entries_path %>
