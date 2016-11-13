@@ -55,23 +55,22 @@
 
 Rails.application.routes.draw do
 
-  root 'static_page#home'
-  
-  resources :ingredients
-
-  resources :weights
-
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
-
-
   get 'static_page/home'
 
   get 'static_page/help'
 
+  root 'static_page#home'
+
+  devise_for :users, :controllers => { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  resources :ingredients
+
+  resources :weights
+
   resources :allergens
+
   resources :foods
+
   resources :diary_entries
 
   # The priority is based upon order of creation: first created -> highest priority.
