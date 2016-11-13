@@ -38,5 +38,3 @@ f3.ingredients<<(i3)
 f3.ingredients<<(i4)
 f3.ingredients<<(i5)
 f3.ingredients<<(i6)
-
-yanssie = User.create(email: 'yg@seas.upenn.edu', encrypted_password: 'duibuqi520')

@@ -39,5 +39,6 @@ class User < ActiveRecord::Base
 
   has_many :diary_entries
   has_many :weights
+  has_and_belongs_to_many :allergens
   
 end
