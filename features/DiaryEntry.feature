@@ -1,6 +1,6 @@
 Feature: Diary_entry page
 
-  As a user
+  As a logged-in user
   So that I can track my diary
   I want to add a new entry to the diary
   
@@ -24,3 +24,17 @@ Feature: Diary_entry page
     Then show me the page
     When I try to change the entry values
     Then I should see the entry has been updated
+
+  Scenario: Add a diary entry with datetime & meal type
+    Given I'm on the diary entry creation page
+    When I try to add a new diary entry with date and meal
+    Then I should be able to see the new diary entry's page
+
+  Scenario: Abort editing an exisiting diary entry
+    Given I'm on the diary entry creation page
+    When I try to add a new diary entry
+    Then show me the page
+    When I click edit the page
+    Then show me the page
+    When I try to abort editing and go back to the diary
+    Then I should see the diary page
