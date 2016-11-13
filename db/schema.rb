@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161113190607) do
   end
 
   create_table "diary_entries", force: :cascade do |t|
+    t.datetime "time"
+    t.string   "meal"
     t.string   "food"
     t.float    "amount"
     t.datetime "created_at", null: false

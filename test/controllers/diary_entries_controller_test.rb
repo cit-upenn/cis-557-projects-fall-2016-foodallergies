@@ -18,7 +18,7 @@ class DiaryEntriesControllerTest < ActionController::TestCase
 
   test "should create diary_entry" do
     assert_difference('DiaryEntry.count') do
-      post :create, diary_entry: { amount: @diary_entry.amount, food: @diary_entry.food }
+      post :create, diary_entry: { amount: @diary_entry.amount, food: @diary_entry.food, meal: @diary_entry.meal, time: @diary_entry.time }
     end
 
     assert_redirected_to diary_entry_path(assigns(:diary_entry))
@@ -35,7 +35,7 @@ class DiaryEntriesControllerTest < ActionController::TestCase
   end
 
   test "should update diary_entry" do
-    patch :update, id: @diary_entry, diary_entry: { amount: @diary_entry.amount, food: @diary_entry.food }
+    patch :update, id: @diary_entry, diary_entry: { amount: @diary_entry.amount, food: @diary_entry.food, meal: @diary_entry.meal, time: @diary_entry.time }
     assert_redirected_to diary_entry_path(assigns(:diary_entry))
   end
 

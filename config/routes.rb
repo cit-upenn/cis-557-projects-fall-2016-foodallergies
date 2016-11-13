@@ -57,9 +57,12 @@ Rails.application.routes.draw do
 
   get 'static_page/home'
 
-  get 'static_page/help'
-
+  resources :diary_entries
   root 'static_page#home'
+  
+  resources :ingredients
+
+  get 'static_page/help'
 
   devise_for :users, :controllers => { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
 

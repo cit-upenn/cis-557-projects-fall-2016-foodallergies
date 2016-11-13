@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Food Diary</h1>
+<h1>Listing Diary Entries</h1>
 
-<table class="table table-responsive" width = "100%">
+<table>
   <thead>
     <tr>
-      <th>Food</th>
-      <th>Amount (g)</th>
+      <th width = "18%">Date and Time</th>
+      <th width = "18%">Meal</th>
+      <th width = "18%">Food Name</th>
+      <th width = "18%">Amount (g)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,17 +16,18 @@
   <tbody>
     <% @diary_entries.each do |diary_entry| %>
       <tr>
-      
-        <td width = "20%"><%= diary_entry.food %></td>
-        <td width = "20%"><%= diary_entry.amount %></td>
-        <td width = "60%">
+        <td><%= diary_entry.time.to_formatted_s(:short) %></td>
+        <td><%= diary_entry.meal %></td>
+        <td><%= diary_entry.food %></td>
+        <td><%= diary_entry.amount %></td>
+        <td>
           <div class="btn-group btn-group-justified">
             <%= link_to 'Show', diary_entry, :class => 'btn btn-default btn-xs' %>
             <%= link_to 'Edit', edit_diary_entry_path(diary_entry), :class => 'btn btn-default btn-xs' %>
             <%= link_to 'Delete', diary_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs' %>
           </div>
         </td>
-
+        
       </tr>
     <% end %>
   </tbody>
