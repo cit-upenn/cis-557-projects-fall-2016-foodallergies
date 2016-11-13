@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  has_many :diary_entries
   has_many :weights
   
 end
