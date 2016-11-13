@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  provider               :string
+#  uid                    :string
 #
 
 require 'test_helper'
