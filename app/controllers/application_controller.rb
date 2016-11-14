@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # this should after protext_from_forgery
-  #before_action :authenticate_user! 
+  # before_action :authenticate_user! 
 
 end
