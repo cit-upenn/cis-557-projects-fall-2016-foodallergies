@@ -1,29 +1,22 @@
 Given (/^I'm on the user sign up page$/) do
-	visit(new_user_path)
+	visit(new_user_session_path)
 end
 
 When (/^I add a new user$/) do
-	fill_in 'Name', :with => "YG"
-	fill_in 'Email', :with => "yg@seas.upenn.edu"
-	click_button 'Create User'
+	fill_in 'Email', :with => "mary@seas.upenn.edu"
+	fill_in 'Password', :with => "12345678"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Sign up'
 end
 
-Then (/^I should be able to see the userpage with user signing in$/) do
-	assert page.has_content?("User was successfully created.")
+Then (/^I should be able to see the homepage$/) do
+	assert page.has_content?("Welcome! You have signed up successfully.")
 end
 
-When (/^I add a new user without username$/) do
-	fill_in 'Email', :with => "yg@seas.upenn.edu"
-	click_button 'Create User'
-end
-
-Then (/^I can't create an user without username$/) do
-	assert page.has_content?("Name can't be blank")
-end
-
-When (/^I add a new user without email$/) do
-	fill_in 'Name', :with => "YG"
-	click_button 'Create User'
+When (/^I add a new user without email field$/) do
+	fill_in 'Password', :with => "12345678"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Sign up'
 end
 
 Then (/^I can't create an user without email$/) do

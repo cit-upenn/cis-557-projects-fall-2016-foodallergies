@@ -4,18 +4,14 @@ Feature: User sign up page
   So that I can log in 
   I want to sign up for Allergies Traker
 	
-	Scenario: Add an username
+	Scenario: Create a new user account
 		Given I'm on the user sign up page
 		When I add a new user
-		Then I should be able to see the userpage with user signing in
-
-	Scenario: Add an user without username
-		Given I'm on the user sign up page
-		When I add a new user without username
 		Then show me the page
-		Then I can't create an user without username
+		Then I should be able to see the homepage
 
-	Scenario: Add an user without email
+	Scenario: Add an user without email field
 		Given I'm on the user sign up page
-		When I add a new user without email
+		When I add a new user without email field
+		Then show me the page
 		Then I can't create an user without email
