@@ -60,7 +60,7 @@ class DiaryEntriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_diary_entry
@@ -69,6 +69,6 @@ class DiaryEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diary_entry_params
-      params.require(:diary_entry).permit(:food, :amount)
+      params.require(:diary_entry).permit(:time, :meal, :food, :amount)
     end
 end

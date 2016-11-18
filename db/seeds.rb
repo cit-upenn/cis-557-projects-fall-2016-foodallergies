@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 a1 = Allergen.create(name: 'Soy')
 a2 = Allergen.create(name: 'Diary')
 a3 = Allergen.create(name: 'Eggs')
@@ -39,5 +38,3 @@ f3.ingredients<<(i3)
 f3.ingredients<<(i4)
 f3.ingredients<<(i5)
 f3.ingredients<<(i6)
-
-yanssie = User.create(email: 'yg@seas.upenn.edu', encrypted_password: 'duibuqi520')

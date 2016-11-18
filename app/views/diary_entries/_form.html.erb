@@ -12,7 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :food %><br>
+    <b>Date and </b> <%= f.label :time %><br>
+    <%= f.datetime_select(:time, :default => { :minute => 00 }, :minute_step => 5) %>
+  </div>
+  <div class="field">
+    <%= f.label :meal %><br>
+    <%= f.select :meal, options_for_select([['Breakfast' ,"Breakfast"], ['Lunch', "Lunch"], ['Dinner', "Dinner"], ['Other', "Other"]]), :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :food %> <b>Name</b><br>
     <%= f.text_field :food %>
   </div>
   <div class="field">

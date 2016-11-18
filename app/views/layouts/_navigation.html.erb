@@ -6,7 +6,7 @@
 			<ul class="nav navbar-nav navbar-right">
 			<li><%= link_to "Home", static_page_home_path %></li>
             <li><%= link_to "Help", static_page_help_path %></li>
-            <li><%= link_to "Sign Up", '#'  %></li>
+            <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
             </ul>
 		
 	</div>
