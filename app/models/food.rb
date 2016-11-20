@@ -19,6 +19,14 @@ class Food < ActiveRecord::Base
     record.errors.add(attr, 'must start with upper case') if value =~ /\A[[:lower:]]/
   end
 
+	def self.search(search)
+		if search
+			where("name LIKE ?", "%#{search}%")
+		else
+			Food.all
+		end
+	end
+
 	# validates_each :product_barcode do |record, attr, value|
 	# 	record.errors.add(attr, 'must be numerical value') if value =~ /[[:alpha:]]/
 	# end

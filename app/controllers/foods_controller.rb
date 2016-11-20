@@ -5,7 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.search(params[:search])
   end
 
   # GET /foods/1
