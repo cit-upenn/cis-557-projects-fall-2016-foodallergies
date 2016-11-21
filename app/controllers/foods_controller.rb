@@ -5,12 +5,23 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.search(params[:search])
+    # @foods = Food.search(params[:search])
+    @foods = Food.all
   end
 
   # GET /foods/1
   # GET /foods/1.json
   def show
+  end
+
+  def search
+    if params[:search] != nil
+      @food_query = Food.where("name = ?", params[:search])
+    # @food_queries.each do |query|
+    #   p query.allergens.name
+    # end
+      @result = @food_query.first.allergens
+    end
   end
 
   # GET /foods/new

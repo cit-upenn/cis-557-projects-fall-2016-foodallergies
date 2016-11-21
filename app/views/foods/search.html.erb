@@ -1,0 +1,14 @@
+<h1> Food Search Page </h1>
+<h6> Please enter the food of interest to see its allergens </h6>
+<%= form_tag foods_search_path, :method => 'get' do%>
+  <%= text_field_tag :search, params[:search]%>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+ <%= if @result != nil
+      @result.each do |result|
+        result.name
+      end
+    end
+    %>
