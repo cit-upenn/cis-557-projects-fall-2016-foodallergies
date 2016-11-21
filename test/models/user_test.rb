@@ -17,6 +17,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
+#  username               :string
 #
 
 require 'test_helper'
