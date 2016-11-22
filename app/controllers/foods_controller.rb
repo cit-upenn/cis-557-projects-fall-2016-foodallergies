@@ -5,7 +5,6 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    # @foods = Food.search(params[:search])
     @foods = Food.all
   end
 
@@ -15,10 +14,9 @@ class FoodsController < ApplicationController
   end
 
   def search
+    @result = []
     if params[:search] != nil
       @food_query = Food.where("name = ?", params[:search])
-    # else
-    #   @message = "Query cannot be empty"
     end
     if @food_query != nil and @food_query.first != nil
        @result = @food_query.first.allergens
