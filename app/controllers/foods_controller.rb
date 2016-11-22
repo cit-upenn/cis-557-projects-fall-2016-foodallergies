@@ -17,10 +17,13 @@ class FoodsController < ApplicationController
   def search
     if params[:search] != nil
       @food_query = Food.where("name = ?", params[:search])
-    # @food_queries.each do |query|
-    #   p query.allergens.name
-    # end
-      @result = @food_query.first.allergens
+    # else
+    #   @message = "Query cannot be empty"
+    end
+    if @food_query != nil and @food_query.first != nil
+       @result = @food_query.first.allergens
+    else
+      @message = "The food you are looking for can't be found"
     end
   end
 

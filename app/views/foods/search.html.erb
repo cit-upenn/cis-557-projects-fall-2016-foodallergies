@@ -7,8 +7,9 @@
 
 
  <%= if @result != nil
-      @result.each do |result|
-        result.name
-      end
-    end
-    %>
+        @result.name.name
+
+     else
+       @message
+     end
+%>
