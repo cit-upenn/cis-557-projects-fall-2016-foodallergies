@@ -15,6 +15,6 @@
 class DiaryEntry < ActiveRecord::Base
 	validates :food, :presence => true
 	validates :amount, numericality: { greater_than: 0 }
-
+	#validates :user_id, :presence => true
 	belongs_to :user
 end

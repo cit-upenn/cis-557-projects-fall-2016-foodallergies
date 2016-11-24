@@ -7,6 +7,10 @@ class DiaryEntriesController < ApplicationController
     @diary_entries = DiaryEntry.all
   end
 
+  def admin_index
+    @diary_entries = DiaryEntry.all
+  end
+
   # GET /diary_entries/1
   # GET /diary_entries/1.json
   def show
@@ -20,6 +24,30 @@ class DiaryEntriesController < ApplicationController
   # GET /diary_entries/1/edit
   def edit
   end
+
+
+  # TODO: associate with the allergens of this user
+  def check_allergens(foodname)
+    food = Food.find_by_name(foodname)
+    if food != nil
+      allergens = food.allergens
+      if allergens != nil
+        result = "WARNING: Allergens detected ("
+        allergens.each do |a|
+          result << a.name
+          if a != allergens.last
+            result << ", "
+          else
+            result <<")!\n"
+          end
+        end
+        result << "Click \"OK\" if you insist to have it, otherwise click \"Cancel\"."
+        return result
+      end
+    end
+    return nil
+  end
+  helper_method :check_allergens
 
   # POST /diary_entries
   # POST /diary_entries.json
@@ -69,6 +97,6 @@ class DiaryEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diary_entry_params
-      params.require(:diary_entry).permit(:time, :meal, :food, :amount)
+      params.require(:diary_entry).permit(:time, :meal, :food, :amount, :user_id)
     end
 end
