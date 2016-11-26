@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 a1 = Allergen.create(name: 'Soy')
-a2 = Allergen.create(name: 'Diary')
+a2 = Allergen.create(name: 'Dairy')
 a3 = Allergen.create(name: 'Eggs')
 a4 = Allergen.create(name: 'Seafood')
 a5 = Allergen.create(name: 'Shellfish')

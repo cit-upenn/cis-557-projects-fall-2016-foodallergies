@@ -1,0 +1,33 @@
+<h1> Food Search Page </h1>
+<h6> Please enter the food of interest to see its allergens </h6>
+<%= form_tag foods_search_path, :method => 'get' do%>
+  <%= text_field_tag :search, params[:search]%>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+ <%= if @result != nil
+
+   #somehow, I cannot just traverse an array or any other type of collection
+   #to print out all the allergens of a given food
+        # size = @result.size
+        # ary = @result.to_ary
+        # ary.class
+        # ary.each do |x|
+        #   x.name
+        # end
+        # i = 0
+        # while i < size
+        #   yield @result[i].name
+        #   i = i + 1
+        # end
+        # @result.class
+        # end
+        # @result.select(:name).each do |elem|
+        #   elem
+        # end
+
+     else
+       @message
+     end
+%>

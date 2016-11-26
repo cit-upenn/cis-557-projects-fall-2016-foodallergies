@@ -21,11 +21,22 @@ class Food < ActiveRecord::Base
 
 	def self.search(search)
 		if search
-			where("name LIKE ?", "%#{search}%")
+			p where("name LIKE ?", "%#{search}%").first.name
+			# where("name LIKE ?", "%#{search}%").Allergen.all
+			# results.each do |result|
+			# 	result.allergens.first
+
 		else
-			Food.all
+			# Food.all
+			p "Search result not found"
 		end
 	end
+
+	# def self.get_allergens()
+	# 	self.allergens.each do |allergen|
+	# 		p allergen.name
+	# 	end
+	# end
 
 	# validates_each :product_barcode do |record, attr, value|
 	# 	record.errors.add(attr, 'must be numerical value') if value =~ /[[:alpha:]]/
