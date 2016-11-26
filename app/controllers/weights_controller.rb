@@ -25,6 +25,7 @@ class WeightsController < ApplicationController
   # POST /weights.json
   def create
     @weight = Weight.new(weight_params)
+    @weight.user_id = current_user.id
 
     respond_to do |format|
       if @weight.save

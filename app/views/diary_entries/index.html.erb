@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @diary_entries.each do |diary_entry| %>
+    <% @diary_entries.select { |d| d.user_id == current_user.id }.each do |diary_entry| %>
       <tr>
         <td><%= diary_entry.time.to_formatted_s(:short) %></td>
         <td><%= diary_entry.meal %></td>
