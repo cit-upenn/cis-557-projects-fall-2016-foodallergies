@@ -4,7 +4,7 @@ class WeightsController < ApplicationController
   # GET /weights
   # GET /weights.json
   def index
-    @weights = Weight.where("user_id = ?", current_user.id)
+    @weights = Weight.where("user_id = ?", current_user.id).order('date')
   end
 
   # GET /weights/1

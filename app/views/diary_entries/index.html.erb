@@ -16,7 +16,7 @@
   <tbody>
     <% @diary_entries.each do |diary_entry| %>
       <tr>
-        <td><%= diary_entry.time.to_formatted_s(:short) %></td>
+        <td><%= diary_entry.time.to_formatted_s(:long) %></td>
         <td><%= diary_entry.meal %></td>
         <td><%= diary_entry.food %></td>
         <td><%= diary_entry.amount %></td>
