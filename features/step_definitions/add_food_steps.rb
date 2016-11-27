@@ -1,4 +1,32 @@
+Given (/^I have set up the user database when testing food db$/) do
+	User.create(
+		username: "yg",
+		email: "yg@seas.upenn.edu",
+		password: "12345678",
+		password_confirmation: "12345678")
+end
+
+Given (/^I'm on the user sign in page when testing food db$/) do
+	visit(new_user_session_path)
+end
+
+When (/^I add an existing user with username and password when testing food db$/) do
+	fill_in 'Login', :with => "yg"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Log in'
+end
+
 Given(/^I'm on the add food page$/) do
+	visit("/foods/new")
+	User.create(
+		username: "yg",
+		email: "yg@seas.upenn.edu",
+		password: "12345678",
+		password_confirmation: "12345678")
+	visit(new_user_session_path)
+	fill_in 'Login', :with => "yg"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Log in'
 	visit("/foods/new")
 end
 
@@ -43,6 +71,16 @@ end
 # end
 
 Given(/^I click the edit button of one food$/) do
+	visit("/foods/new")
+	User.create(
+		username: "yg",
+		email: "yg@seas.upenn.edu",
+		password: "12345678",
+		password_confirmation: "12345678")
+	visit(new_user_session_path)
+	fill_in 'Login', :with => "yg"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Log in'
 	visit("/foods/new")
 	fill_in 'Name', :with => "Chips"
 	click_button 'Create Food'

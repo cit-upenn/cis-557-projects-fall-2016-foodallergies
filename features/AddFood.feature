@@ -4,8 +4,14 @@ Feature: User in the Food Database page
 	I want to edit an existing food
 	I want to delete an existing food
 
+	Scenario: Log in as an existing user with username
+	Given I have set up the user database when testing food db
+		 And I'm on the user sign in page when testing food db
+	When I add an existing user with username and password when testing food db
+
 Scenario: Add a food
 	Given I'm on the add food page
+	Then show me the page
 	When I add a nonexistent food to the data base
 	Then I should be able to add a food
 
