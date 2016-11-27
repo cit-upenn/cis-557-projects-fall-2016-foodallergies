@@ -14,7 +14,11 @@
   <thead>
     <tr>
       <% if @result.size != 0 %>
-      <th> Allergen(s) contained in this food that you are searching: </th>
+        <% if @result.size > 1 %>
+          <th> Allergens contained in this food that you are searching: </th>
+        <% else %>
+          <th> Allergen contained in this food that you are searching: </th>
+        <% end %>
       <% end %>
     </tr>
   </thead>
@@ -36,7 +40,13 @@
   <thead>
     <tr>
       <% if @user_allergen.size != 0 %>
-      <th style="color:blue;"> Allergen(s) in this food that you are allergic to: </th>
+        <% if @user_allergen.size > 1 %>
+          <th style="color:blue;"> Allergens in this food that you are
+             allergic to: </th>
+        <% else %>
+          <th style="color:blue;"> Allergen in this food that you are
+           allergic to: </th>
+        <% end %>
       <% end %>
     </tr>
   </thead>
