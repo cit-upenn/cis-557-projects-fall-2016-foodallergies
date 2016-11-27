@@ -38,7 +38,8 @@ class DiaryEntriesController < ApplicationController
         end
         allergens.each do |a|
           if myAllergens.include? a.name
-          result << a.name
+            result << a.name
+          end
         end
       end
     end
