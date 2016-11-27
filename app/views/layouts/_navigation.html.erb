@@ -4,7 +4,6 @@
 		<a class="navbar-brand">Allergies Tracker</a>
 		</div>
 			<ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Home", static_page_home_path %></li>
             <li><%= link_to "Settings", settings_user_path(:id => current_user.id) %></li>
             <li><%= link_to "Profile", edit_user_registration_path %></li>
             <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>

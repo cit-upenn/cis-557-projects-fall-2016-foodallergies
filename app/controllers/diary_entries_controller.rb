@@ -4,11 +4,11 @@ class DiaryEntriesController < ApplicationController
   # GET /diary_entries
   # GET /diary_entries.json
   def index
-    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order('time asc')
+    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order('time')
   end
 
   def admin_index
-    @diary_entries = DiaryEntry.all.order('time asc')
+    @diary_entries = DiaryEntry.all.order('time')
   end
 
   # GET /diary_entries/1
@@ -26,15 +26,20 @@ class DiaryEntriesController < ApplicationController
   end
 
   # return an array of allergens
-  # TODO: associate with the allergens of this user
   def get_allergens(foodname)
-    food = Food.find_by_name(foodname)
+    food = Food.find_by_name(foodname.humanize)
     result = Array.new
     if food != nil
-      allergens = food.allergens
+      allergens = food.allergens  # get allergens of the food
       if allergens != nil
+        myAllergens = Array.new   # get allergens of the user
+        User.find(current_user.id).allergens.each do |a|
+          myAllergens << a.name
+        end
         allergens.each do |a|
-          result << a.name
+          if myAllergens.include? a.name
+            result << a.name
+          end
         end
       end
     end
