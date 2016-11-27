@@ -8,7 +8,9 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
+    <% if current_user %>
 	<%= render 'layouts/navigation'%>
+	<% end %>
 	<div id="main-container" class="container">
 	    <!--
 		<p class="notice"><%= notice %></p>

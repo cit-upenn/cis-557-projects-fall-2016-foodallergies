@@ -5,4 +5,23 @@
   <%= submit_tag "Search" %>
 <% end %>
 
-
+<table>
+  <thead>
+    <tr>
+      <th> Allergen: </th>
+    </tr>
+  <thead>
+  <tbody>
+  <% if @result != nil %>
+  <% @result.each do |x| %>
+  <tr>
+    <td>
+    <%= x.name %>
+    </td>
+  </tr>
+    <% end %>
+  <% else %>
+    <%= @message %>
+  <% end %>
+</tbody>
+</table>
