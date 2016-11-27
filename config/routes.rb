@@ -52,9 +52,6 @@
 #             new_allergen GET      /allergens/new(.:format)               allergens#new
 #            edit_allergen GET      /allergens/:id/edit(.:format)          allergens#edit
 #                 allergen GET      /allergens/:id(.:format)               allergens#show
-#                          PATCH    /allergens/:id(.:format)               allergens#update
-#                          PUT      /allergens/:id(.:format)               allergens#update
-#                          DELETE   /allergens/:id(.:format)               allergens#destroy
 #                    foods GET      /foods(.:format)                       foods#index
 #                          POST     /foods(.:format)                       foods#create
 #                 new_food GET      /foods/new(.:format)                   foods#new
@@ -95,7 +92,7 @@ Rails.application.routes.draw do
 
   resources :weights
 
-  resources :allergens
+  resources :allergens, except: [:destroy, :update]
 
   resources :foods
 
