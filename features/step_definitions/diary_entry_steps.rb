@@ -1,12 +1,3 @@
-Given(/^I have logged in$/) do
-	visit(new_diary_entry_path)
-	click_link 'Sign up'
-	fill_in 'Email', :with => 'aaa@aaa.com'
-	fill_in 'Password', :with => '11111111'
-	fill_in 'Password confirmation', :with => 'Password confirmation'
-	click_button 'Sign up'
-end
-
 Given(/^I'm on the diary entry creation page$/) do
 	visit(new_diary_entry_path)
 end
