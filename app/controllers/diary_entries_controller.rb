@@ -4,7 +4,7 @@ class DiaryEntriesController < ApplicationController
   # GET /diary_entries
   # GET /diary_entries.json
   def index
-    @diary_entries = DiaryEntry.all
+    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id)
   end
 
   def admin_index
@@ -98,6 +98,6 @@ class DiaryEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def diary_entry_params
-      params.require(:diary_entry).permit(:time, :meal, :food, :amount, :user_id)
+      params.require(:diary_entry).permit(:time, :meal, :food, :amount)
     end
 end
