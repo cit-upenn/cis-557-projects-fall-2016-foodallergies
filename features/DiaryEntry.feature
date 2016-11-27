@@ -6,7 +6,9 @@ Feature: Diary_entry page
   
   
   Scenario: Add a diary entry
+    Given I have logged in
     Given I'm on the diary entry creation page
+    
     When I try to add a new diary entry
     Then I should be able to see the new diary entry's page
     

@@ -37,3 +37,15 @@ end
 Then (/^I should be able to sign out and see sign up page$/) do
 	assert page.has_content?("Signed out successfully.")
 end
+
+Given (/^I have logged in$/) do
+	User.create(
+		username: "yg",
+		email: "yg@seas.upenn.edu",
+		password: "12345678",
+		password_confirmation: "12345678")
+	visit(new_user_session_path)
+	fill_in 'Login', :with => "yg"
+	fill_in 'Password', :with => "12345678"
+	click_button 'Log in'
+end
