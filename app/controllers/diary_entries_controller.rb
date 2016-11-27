@@ -26,14 +26,18 @@ class DiaryEntriesController < ApplicationController
   end
 
   # return an array of allergens
-  # TODO: associate with the allergens of this user
   def get_allergens(foodname)
-    food = Food.find_by_name(foodname)
+    food = Food.find_by_name(foodname.humanize)
     result = Array.new
     if food != nil
-      allergens = food.allergens
+      allergens = food.allergens  # get allergens of the food
       if allergens != nil
+        myAllergens = Array.new   # get allergens of the user
+        User.find(current_user.id).allergens.each do |a|
+          myAllergens << a.name
+        end
         allergens.each do |a|
+          if myAllergens.include? a.name
           result << a.name
         end
       end
