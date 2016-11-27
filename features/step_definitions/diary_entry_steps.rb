@@ -5,7 +5,7 @@ end
 When(/^I try to add a new diary entry$/) do
 	fill_in 'Food', :with => "Ramen"
 	fill_in 'Amount', :with => "500"
-	click_button 'Add Diary entry'
+	click_button 'Create Diary entry'
 end
 
 Then(/^I should be able to see the new diary entry's page$/) do 
@@ -15,7 +15,7 @@ end
 
 When(/^I try to add a new diary entry without a food name$/) do
 	fill_in 'Amount', :with => "500"
-	click_button 'Add Diary entry'
+	click_button 'Create Diary entry'
 end
 
 Then(/^I should see some errors saying food cant be blank on the page$/) do 
