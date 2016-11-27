@@ -5,6 +5,7 @@ Feature: User log in page
   I want to log in for Allergies Traker
 
     Scenario: Log in as an existing user with username
+    	Given I have set up the user database
 		Given I'm on the user sign in page
 		When I add an existing user with username and password
 		Then I should be able to see the homepage after logged in

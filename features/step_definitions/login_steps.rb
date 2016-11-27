@@ -35,7 +35,7 @@ When (/^click the sign out button$/) do
 end
 
 Then (/^I should be able to sign out and see sign up page$/) do
-	assert page.has_content?("Signed out successfully.")
+	assert page.has_content?("You need to sign in or sign up before continuing.")
 end
 
 Given (/^I have logged in$/) do
