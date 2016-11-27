@@ -1,0 +1,17 @@
+<h2>Settings</h2>
+Change your settings <%= @name %>!
+
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :allergens %><br>
+    <%= collection_check_boxes :user, :allergen_ids, Allergen.all, :id, :name do |b| %>
+          <%= b.label {b.check_box + b.text} %>
+          <br />
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

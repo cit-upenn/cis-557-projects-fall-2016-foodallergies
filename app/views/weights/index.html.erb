@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @weights.select { |w| w.user_id == current_user.id }.each do |weight| %>
+    <% @weights.each do |weight| %>
       <tr>
         <td><%= weight.weight %></td>
         <td><%= weight.date %></td>
