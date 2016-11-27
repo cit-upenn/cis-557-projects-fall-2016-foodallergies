@@ -1,6 +1,6 @@
 <h1> Food Search Page </h1>
 <h4> Please enter the food of interest to see its allergens </h4>
-<h6> Note: First letter of the first word should be capitalized and the
+<h6> Note: Only the first letter of the first word should be capitalized and the
      rest should be in lowercase.</h6>
 <%= form_tag foods_search_path, :method => 'get' do%>
   <%= text_field_tag :search, params[:search]%>
@@ -14,7 +14,7 @@
   <thead>
     <tr>
       <% if @result.size != 0 %>
-      <th> Allergen contained in the food that you are searching: </th>
+      <th> Allergen(s) contained in this food that you are searching: </th>
       <% end %>
     </tr>
   </thead>
@@ -36,7 +36,7 @@
   <thead>
     <tr>
       <% if @user_allergen.size != 0 %>
-      <th> Allergen in the food that you are allergic to: </th>
+      <th> Allergen(s) in this food that you are allergic to: </th>
       <% end %>
     </tr>
   </thead>
