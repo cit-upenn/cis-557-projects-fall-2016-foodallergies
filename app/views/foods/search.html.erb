@@ -36,14 +36,14 @@
   <thead>
     <tr>
       <% if @user_allergen.size != 0 %>
-      <th> Allergen(s) in this food that you are allergic to: </th>
+      <th style="color:blue;"> Allergen(s) in this food that you are allergic to: </th>
       <% end %>
     </tr>
   </thead>
   <tbody>
   <% @user_allergen.each do |x| %>
   <tr>
-    <td>
+    <td style="color:red;">
     <%= x %>
     </td>
   </tr>
