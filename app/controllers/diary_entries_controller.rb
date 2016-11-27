@@ -25,29 +25,34 @@ class DiaryEntriesController < ApplicationController
   def edit
   end
 
-
+  # return an array of allergens
   # TODO: associate with the allergens of this user
-  def check_allergens(foodname)
+  def get_allergens(foodname)
     food = Food.find_by_name(foodname)
+    result = Array.new
     if food != nil
       allergens = food.allergens
       if allergens != nil
-        result = "WARNING: Allergens detected ("
         allergens.each do |a|
           result << a.name
-          if a != allergens.last
-            result << ", "
-          else
-            result <<")!\n"
-          end
         end
-        result << "Click \"OK\" if you insist to have it, otherwise click \"Cancel\"."
-        return result
       end
     end
-    return nil
+    return result
   end
   helper_method :check_allergens
+
+  def sort
+    @diary_entries = []
+    if (DiaryEntry.attribute_names.include? (params[:field])) then
+      @diary_entries = DiaryEntry.order(params[:field])
+    end
+    
+    render :index
+  end
+
+
+
 
   # POST /diary_entries
   # POST /diary_entries.json
