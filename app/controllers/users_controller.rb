@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     def show
+      @user = User.find(params[:id])
     end
 
 	def settings
@@ -12,8 +13,10 @@ class UsersController < ApplicationController
 	  @user = User.find(params[:id])
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to controller: 'users', action: 'settings', id: current_user.id, 
-          	notice: 'User settings was successfully updated.'}
+          format.html { redirect_to @user, 
+             notice: 'User settings were successfully updated.'}
+          # format.html { redirect_to controller: 'users', action: 'settings', id: current_user.id, 
+          # 	notice: 'User settings was successfully updated.'}
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :edit }
