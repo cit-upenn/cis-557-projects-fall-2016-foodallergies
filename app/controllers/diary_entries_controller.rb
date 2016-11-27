@@ -4,11 +4,11 @@ class DiaryEntriesController < ApplicationController
   # GET /diary_entries
   # GET /diary_entries.json
   def index
-    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id)
+    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order('time asc')
   end
 
   def admin_index
-    @diary_entries = DiaryEntry.all
+    @diary_entries = DiaryEntry.all.order('time asc')
   end
 
   # GET /diary_entries/1
@@ -45,7 +45,7 @@ class DiaryEntriesController < ApplicationController
   def sort
     @diary_entries = []
     if (DiaryEntry.attribute_names.include? (params[:field])) then
-      @diary_entries = DiaryEntry.order(params[:field])
+      @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order(params[:field])
     end
     
     render :index
