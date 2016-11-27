@@ -24,15 +24,11 @@ class FoodsController < ApplicationController
        @result = @food_query.first.allergens
        @result.each do |x|
          @user.allergens.each do |y|
-          #  temp = x.find_by name: y.name
            if x.name == y.name
-          #  if temp != nil:
              @user_allergen.push(x.name)
            end
          end
        end
-    else
-      @message = "The food you are looking for can't be found"
     end
   end
 
