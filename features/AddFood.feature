@@ -11,14 +11,12 @@ Feature: User in the Food Database page
 
 Scenario: Add a food
 	Given I'm on the add food page
-	Then show me the page
 	When I add a nonexistent food to the data base
 	Then I should be able to add a food
 
 Scenario: Add food without a name
 	Given I'm on the add food page
 	When I add a food without a name to the database
-	Then show me the page
 	Then I should see some errors on the food page
 
 Scenario: Edit a food
