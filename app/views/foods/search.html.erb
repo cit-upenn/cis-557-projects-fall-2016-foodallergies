@@ -6,13 +6,17 @@
 <% end %>
 
 <table>
+
+
+<% if @result != nil %>
   <thead>
     <tr>
-      <th> Allergen: </th>
+      <% if @result.size != 0 %>
+      <th> Allergen contained in the food that you are searching: </th>
+      <% end %>
     </tr>
-  <thead>
+  </thead>
   <tbody>
-  <% if @result != nil %>
   <% @result.each do |x| %>
   <tr>
     <td>
@@ -23,5 +27,24 @@
   <% else %>
     <%= @message %>
   <% end %>
+</tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <% if @user_allergen.size != 0 %>
+      <th> Allergen in the food that you are allergic to: </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+  <% @user_allergen.each do |x| %>
+  <tr>
+    <td>
+    <%= x %>
+    </td>
+  </tr>
+    <% end %>
 </tbody>
 </table>

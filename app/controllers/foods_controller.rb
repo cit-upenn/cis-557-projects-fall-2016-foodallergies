@@ -15,13 +15,20 @@ class FoodsController < ApplicationController
 
   def search
     @result = []
+    @user = current_user
+    @user_allergen = []
     if params[:search] != nil
       @food_query = Food.where("name = ?", params[:search])
     end
     if @food_query != nil and @food_query.first != nil
        @result = @food_query.first.allergens
-    else
-      @message = "The food you are looking for can't be found"
+       @result.each do |x|
+         @user.allergens.each do |y|
+           if x.name == y.name
+             @user_allergen.push(x.name)
+           end
+         end
+       end
     end
   end
 
