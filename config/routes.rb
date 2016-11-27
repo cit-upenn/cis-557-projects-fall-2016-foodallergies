@@ -22,12 +22,13 @@
 #                          DELETE   /users(.:format)                       devise/registrations#destroy
 #  user_omniauth_authorize GET|POST /users/auth/:provider(.:format)        users/omniauth_callbacks#passthru {:provider=>/facebook/}
 #   user_omniauth_callback GET|POST /users/auth/:action/callback(.:format) users/omniauth_callbacks#(?-mix:facebook)
+#                     user GET      /users/:id(.:format)                   users#show
 #            settings_user GET      /users/:id/settings(.:format)          users#settings
 #                    users GET      /users(.:format)                       users#index
 #                          POST     /users(.:format)                       users#create
 #                 new_user GET      /users/new(.:format)                   users#new
 #                edit_user GET      /users/:id/edit(.:format)              users#edit
-#                     user GET      /users/:id(.:format)                   users#show
+#                          GET      /users/:id(.:format)                   users#show
 #                          PATCH    /users/:id(.:format)                   users#update
 #                          PUT      /users/:id(.:format)                   users#update
 #                          DELETE   /users/:id(.:format)                   users#destroy
@@ -82,6 +83,7 @@ Rails.application.routes.draw do
   get 'static_page/help'
 
   devise_for :users, :controllers => { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
+
   resources :users do
     member do
       get 'settings'

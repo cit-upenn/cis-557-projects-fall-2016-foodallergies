@@ -1,3 +1,0 @@
-== README
-
-This is a tracker for food allergies in eosinophilic esophagitis.
