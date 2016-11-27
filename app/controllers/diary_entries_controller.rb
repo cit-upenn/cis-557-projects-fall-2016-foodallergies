@@ -4,6 +4,10 @@ class DiaryEntriesController < ApplicationController
   # GET /diary_entries
   # GET /diary_entries.json
   def index
+    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id)
+  end
+
+  def admin_index
     @diary_entries = DiaryEntry.all
   end
 
@@ -21,10 +25,40 @@ class DiaryEntriesController < ApplicationController
   def edit
   end
 
+  # return an array of allergens
+  # TODO: associate with the allergens of this user
+  def get_allergens(foodname)
+    food = Food.find_by_name(foodname)
+    result = Array.new
+    if food != nil
+      allergens = food.allergens
+      if allergens != nil
+        allergens.each do |a|
+          result << a.name
+        end
+      end
+    end
+    return result
+  end
+  helper_method :check_allergens
+
+  def sort
+    @diary_entries = []
+    if (DiaryEntry.attribute_names.include? (params[:field])) then
+      @diary_entries = DiaryEntry.order(params[:field])
+    end
+    
+    render :index
+  end
+
+
+
+
   # POST /diary_entries
   # POST /diary_entries.json
   def create
     @diary_entry = DiaryEntry.new(diary_entry_params)
+    @diary_entry.user_id = current_user.id
 
     respond_to do |format|
       if @diary_entry.save

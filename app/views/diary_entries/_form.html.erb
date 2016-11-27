@@ -1,4 +1,4 @@
-<%= form_for(@diary_entry) do |f| %>
+<%= form_for (@diary_entry) do |f| %>
   <% if @diary_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@diary_entry.errors.count, "error") %> prohibited this diary_entry from being saved:</h2>
@@ -13,21 +13,23 @@
 
   <div class="field">
     <b>Date and </b> <%= f.label :time %><br>
-    <%= f.datetime_select(:time, :default => { :minute => 00 }, :minute_step => 5) %>
+    <%= f.datetime_select(:time, :minute_step => 5) %>
   </div>
   <div class="field">
     <%= f.label :meal %><br>
-    <%= f.select :meal, options_for_select([['Breakfast' ,"Breakfast"], ['Lunch', "Lunch"], ['Dinner', "Dinner"], ['Other', "Other"]]), :include_blank => true %>
+    <%= f.select :meal, options_for_select([['Breakfast' ,"Breakfast"], ['Lunch', "Lunch"], ['Dinner', "Dinner"], ['Other', "Other"]])%>
   </div>
   <div class="field">
     <%= f.label :food %> <b>Name</b><br>
-    <%= f.text_field :food %>
+    <%= f.text_field :food, required: true%>
   </div>
   <div class="field">
     <%= f.label :amount %> <b>(g)</b><br>
-    <%= f.number_field :amount, class: :text_field, step: :any %>
+    <%= f.number_field :amount, class: :text_field, step: :any, required: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Diary Entry" %>
   </div>
+
+
 <% end %>
