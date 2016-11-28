@@ -43,7 +43,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 
-gruop :production do
+group :production do
   gem 'pg'
 end
 
