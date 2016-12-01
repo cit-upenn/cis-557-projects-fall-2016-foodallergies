@@ -43,9 +43,11 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 
@@ -59,6 +61,8 @@ group :development, :test do
   gem 'launchy'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'simplecov'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 
