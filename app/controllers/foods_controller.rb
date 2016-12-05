@@ -11,6 +11,11 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
+    @ingredients = FoodApi.retrieve_results(@food.name)
+    @ingredients.map(&:capitalize).each do |ingredient|
+      ingredient = Ingredient.find_or_create_by(name: ingredient)
+      @food.ingredients << ingredient unless @food.ingredients.include? ingredient
+    end
   end
 
   def search
@@ -21,9 +26,9 @@ class FoodsController < ApplicationController
       @food_query = Food.where("name = ?", params[:search])
     end
     if @food_query != nil and @food_query.first != nil
-       @result = @food_query.first.allergens
+       @result = @food_query.first.allergens.uniq
        @result.each do |x|
-         @user.allergens.each do |y|
+         @user.allergens.uniq.each do |y|
            if x.name == y.name
              @user_allergen.push(x.name)
            end

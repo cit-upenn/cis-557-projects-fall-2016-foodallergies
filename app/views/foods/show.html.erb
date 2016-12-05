@@ -10,5 +10,13 @@
   <%= @food.product_barcode %>
 </p>
 
+<p>
+  <strong>ingredients:</strong>
+  <% @food.ingredients.uniq.each do |ingredient| %>
+      <p><%= ingredient.name %></p>
+  <% end %>
+
+</p>
+
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
