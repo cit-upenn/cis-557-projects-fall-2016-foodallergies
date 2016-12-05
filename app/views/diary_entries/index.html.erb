@@ -22,9 +22,9 @@
         <td><%= diary_entry.amount %></td>
         <td>
           <div class="btn-group btn-group-justified" >
-            <%= link_to 'Show', diary_entry, :class => 'btn btn-default btn-xs' %>
-            <%= link_to 'Edit', edit_diary_entry_path(diary_entry), :class => 'btn btn-default btn-xs' %>
-            <%= link_to 'Delete', diary_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs' %>
+            <%= link_to 'Show', diary_entry, :class => 'btn btn-success btn-xs active' %>
+            <%= link_to 'Edit', edit_diary_entry_path(diary_entry), :class => 'btn btn-warning btn-xs active' %>
+            <%= link_to 'Delete', diary_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-xs active' %>
           </div>
         </td>
 
@@ -36,6 +36,6 @@
 <br>
 
 <div class="buttom btn-group btn-group-justified">
-  <%= link_to 'Add New Entry', new_diary_entry_path, :class => 'btn btn-success active' %>
-  <%= link_to 'Download', '', :class => 'btn btn-primary active' %>
+  <%= link_to 'Add New Entry', new_diary_entry_path, :class => 'btn btn-primary active' %>
+  <%= link_to 'Download', '', :class => 'btn btn-info active' %>
 </div>
