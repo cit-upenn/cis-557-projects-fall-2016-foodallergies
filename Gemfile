@@ -45,6 +45,10 @@ gem 'omniauth-facebook'
 
 gem 'typhoeus'
 
+# for download pdf
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+
 
 group :production do
   gem 'pg'

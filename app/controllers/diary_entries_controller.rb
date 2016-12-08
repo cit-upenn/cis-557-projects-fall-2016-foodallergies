@@ -57,6 +57,14 @@ class DiaryEntriesController < ApplicationController
   end
 
 
+  def download
+    @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order('time')
+    @user_id = current_user.id
+    html = render_to_string(:layout => false , :action => "download.html.erb") # your view erb files goes to :action 
+    kit = PDFKit.new(html)
+    send_data(kit.to_pdf, :filename=>"#{@user_id}.pdf",
+      :type => 'application/pdf', :disposition => 'inline')
+  end
 
 
   # POST /diary_entries

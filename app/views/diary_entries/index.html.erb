@@ -45,5 +45,5 @@
 
 <div class="buttom btn-group btn-group-justified">
   <%= link_to 'Add New Entry', new_diary_entry_path, :class => 'btn btn-primary active' %>
-  <%= link_to 'Download', '', :class => 'btn btn-info active' %>
+  <%= link_to 'Download', diary_entries_download_path, method: :post, :class => 'btn btn-info active' %>
 </div>
