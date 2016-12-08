@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: food_apis
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class FoodApi < ActiveRecord::Base
 # APIKey = 'a7F2g1799I3BHllnceNTKQuS4Dm0E1hdqmUS42oO'
 

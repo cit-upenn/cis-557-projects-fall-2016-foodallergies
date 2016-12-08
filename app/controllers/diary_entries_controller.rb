@@ -45,7 +45,7 @@ class DiaryEntriesController < ApplicationController
     end
     return result
   end
-  helper_method :check_allergens
+  helper_method :get_allergens
 
   def sort
     @diary_entries = []

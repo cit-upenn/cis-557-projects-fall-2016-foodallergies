@@ -4,11 +4,12 @@
 
 <table>
   <thead>
-    <tr>
-      <th width = "18%">Date and Time</th>
-      <th width = "18%">Meal</th>
-      <th width = "18%">Food Name</th>
-      <th width = "18%">Amount (Serving Size)</th>
+    <tr align="center">
+      <th width = "14.4%">Date and Time</th>
+      <th width = "14.4%">Meal</th>
+      <th width = "14.4%">Food Name</th>
+      <th width = "14.4%">Amount (Serving Size)</th>
+      <th width = "14.4%">Allergens?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +17,17 @@
   <tbody>
     <% @diary_entries.each do |diary_entry| %>
       <tr>
-        <td><%= diary_entry.time.to_formatted_s(:long) %></td>
+        <td><%= diary_entry.time.to_formatted_s(:short) %></td>
         <td><%= diary_entry.meal %></td>
         <td><%= diary_entry.food %></td>
         <td><%= diary_entry.amount %></td>
+        <td>
+          <% if get_allergens(diary_entry.food).empty? %>
+            <font color="green">Free</font>
+          <% else %>
+            <font color="red">Detected</font>
+          <% end %>
+        </td>
         <td>
           <div class="btn-group btn-group-justified" >
             <%= link_to 'Show', diary_entry, :class => 'btn btn-success btn-xs active' %>
