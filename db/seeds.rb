@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # => ceate allergens
-(["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gulten]).each do |allergen|
+(["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gluten]).each do |allergen|
   Allergen.create(name: allergen)
 end
 
@@ -34,10 +34,10 @@ end
   'Lobster', 'Langouste', 'langoustine', 'Moreton bay bugs', 'scampi', 'tomalley',
   'Prawns', 'Shrimp', 'crevette', 'abalone', 'clams', 'cockles', 'mussels',
   'oysters', 'octopi', 'scallops', 'snails', 'esgargot', 'squid', 'calamari'].map(&:capitalize).each do |ingredient|
-    allergen = Allergen.find_by_name("Shellfish")
-    ingredient = Ingredient.find_or_create_by(name: ingredient)
-    ingredient.allergens << allergen unless ingredient.allergens.include? allergen
-    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+  allergen = Allergen.find_by_name("Shellfish")
+  ingredient = Ingredient.find_or_create_by(name: ingredient)
+  ingredient.allergens << allergen unless ingredient.allergens.include? allergen
+  allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
 end
 
 #3 Seafood
@@ -52,10 +52,10 @@ end
   'haddock', 'perch', 'salmon', 'tilapia', 'tuna', 'parvalbumin', 'anchovy', 'bass',
   'catfish', 'grouper', 'hake', 'halibut', 'herring', 'mahi mahi', 'pike', 'pollock',
   'snapper', 'sole', 'swordfish', 'trout', 'walleye'].map(&:capitalize).each do |ingredient|
-    allergen = Allergen.find_by_name("Seafood")
-    ingredient = Ingredient.find_or_create_by(name: ingredient)
-    ingredient.allergens << allergen unless ingredient.allergens.include? allergen
-    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+  allergen = Allergen.find_by_name("Seafood")
+  ingredient = Ingredient.find_or_create_by(name: ingredient)
+  ingredient.allergens << allergen unless ingredient.allergens.include? allergen
+  allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
 end
 
 # 4. Milk:
@@ -146,8 +146,8 @@ end
   'hydrolyzed wheat gluten', 'hydrolyzed wheat starch', 'hydroxypropyltrimonium hydrolyzed wheat protein',
   'dextrimaltose', 'disodium wheatgermamido peg-2 sulfosuccinate', 'wheat bran extract',
   'triticale'].map(&:capitalize).each do |ingredient|
-    allergen = Allergen.find_by_name("Wheat")
-    ingredient = Ingredient.find_or_create_by(name: ingredient)
-    ingredient.allergens << allergen   unless ingredient.allergens.include? allergen
-    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+  allergen = Allergen.find_by_name("Wheat")
+  ingredient = Ingredient.find_or_create_by(name: ingredient)
+  ingredient.allergens << allergen   unless ingredient.allergens.include? allergen
+  allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
   end
