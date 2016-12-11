@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class DiaryEntriesControllerTest < ActionController::TestCase
+
   setup do
     @diary_entry = diary_entries(:one)
   end
