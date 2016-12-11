@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
-    def show
-      @user = User.find(params[:id])
-    end
+  def index
+    @users = User.all.select{|u| u.username!='admin'}
+    
+  end
+
+  def show
+    
+  end
 
 	def settings
 		@user = current_user
@@ -29,6 +34,7 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = user.find(params[:id])
+
     end
     def user_params
     	params.require(:user).permit(

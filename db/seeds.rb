@@ -6,6 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+    admin = User.create(
+    username: "admin",
+    email: "admin@upenn.edu",
+    password: "12345678",
+    password_confirmation: "12345678")
+    admin.update_attribute :admin, true
+
+    # => ceate allergens
+    (["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gulten]).each do |allergen|
+       Allergen.create(name: allergen)
+    end
+ 
+
 # => ceate allergens
 (["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gluten]).each do |allergen|
   Allergen.create(name: allergen)
@@ -150,4 +163,4 @@ end
   ingredient = Ingredient.find_or_create_by(name: ingredient)
   ingredient.allergens << allergen   unless ingredient.allergens.include? allergen
   allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
-  end
+end
