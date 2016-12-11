@@ -32,12 +32,13 @@ class FoodApi < ActiveRecord::Base
     def ingredient_url(keyword)
      url = FoodApi.query_url(keyword)
      data = Typhoeus.get(url, followlocation: true).body
-     if data != nil
-       ingredient_url = 'https://ndb.nal.usda.gov' + Nokogiri::HTML(data).css('table > tbody').css('td > a').first['href']
 
-       return ingredient_url
+     begin
+        ingredient_url = 'https://ndb.nal.usda.gov' + Nokogiri::HTML(data).css('table > tbody').css('td > a').first['href']
+     rescue NoMethodError
+        return nil
      else
-       return nil
+        return ingredient_url
      end
     end
 
@@ -54,9 +55,12 @@ class FoodApi < ActiveRecord::Base
 
      ingredient_url = FoodApi.ingredient_url(keyword)
      if ingredient_url != nil
-       data = FoodApi.getData(ingredient_url)
-      #  logger.info data
-       data.gsub('Ingredients: ', '').gsub(/Date.*/, '').gsub('.', '').split(',').map(&:strip)
+
+        data = FoodApi.getData(ingredient_url)
+        #  logger.info data
+        data.gsub('Ingredients: ', '').gsub(/Date.*/, '').gsub('.', '').split(',').map(&:strip)
+     else
+        return []
      end
     end
   end

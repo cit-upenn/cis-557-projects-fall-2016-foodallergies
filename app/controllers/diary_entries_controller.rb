@@ -27,6 +27,7 @@ class DiaryEntriesController < ApplicationController
 
   # return an array of allergens
   def get_allergens(foodname)
+    # first seach from local dasebase
     food = Food.find_by_name(foodname.humanize)
     result = Array.new
     if food != nil
@@ -42,6 +43,12 @@ class DiaryEntriesController < ApplicationController
           end
         end
       end
+    end
+    # second, search from API
+    ingredients = FoodApi.retrieve_results(foodname)
+    ingredients.map(&:capitalize).each do |ingredient|
+      ingredient = Ingredient.find_or_create_by(name: ingredient)
+      result << ingredient.name unless result.include? ingredient.name
     end
     return result
   end
