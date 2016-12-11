@@ -30,27 +30,32 @@ class DiaryEntriesController < ApplicationController
     # first seach from local dasebase
     food = Food.find_by_name(foodname.humanize)
     result = Array.new
-    if food != nil
-      allergens = food.allergens  # get allergens of the food
-      if allergens != nil
-        myAllergens = Array.new   # get allergens of the user
-        User.find(current_user.id).allergens.each do |a|
-          myAllergens << a.name
-        end
-        allergens.each do |a|
-          if myAllergens.include? a.name
-            result << a.name
-          end
-        end
-      end
+    myAllergens = Array.new   # get allergens of the user
+    User.find(current_user.id).allergens.each do |a|
+      myAllergens << a.name
     end
+
+    # if food != nil
+    #   allergens = food.allergens  # get allergens of the food
+    #   if allergens != nil
+    #     allergens.each do |a|
+    #       if myAllergens.include? a.name
+    #         result << a.name
+    #       end
+    #     end
+    #   end
+    # end
     # second, search from API
     ingredients = FoodApi.retrieve_results(foodname)
     ingredients.map(&:capitalize).each do |ingredient|
       ingredient = Ingredient.find_or_create_by(name: ingredient)
-      result << ingredient.name unless result.include? ingredient.name
+      ingredient.allergens.each do |a|
+        if myAllergens.include? a.name
+          result << a.name
+        end
+      end
     end
-    return result
+    return result.uniq
   end
   helper_method :get_allergens
 

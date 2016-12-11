@@ -16,6 +16,13 @@
 </p>
 
 <p>
+  <strong>Allergens:</strong>
+  <% get_allergens(@diary_entry.food).each do |a| %>
+    <font color="red"><%= a %></font>
+  <% end %>
+</p>
+
+<p>
   <strong>Amount (Serving Size):</strong>
   <%= @diary_entry.amount %>
 </p>
