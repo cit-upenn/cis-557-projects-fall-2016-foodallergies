@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% allergens = get_allergens(@diary_entry.food) %>
+<% if not get_allergens(@diary_entry.food).empty? %>
+  <div class="alert">
+    <strong>WARNING: </strong> Allergens detected! We suggest you not taking this entry.
+  </div>
+<% end %>
+
 <p>
   <strong>Time:</strong>
   <%= @diary_entry.time %>
@@ -13,6 +20,13 @@
 <p>
   <strong>Food:</strong>
   <%= @diary_entry.food %>
+</p>
+
+<p>
+  <strong>Allergens:</strong>
+  <% allergens.each do |a| %>
+    <font color="red"><%= a %></font>
+  <% end %>
 </p>
 
 <p>
