@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # => ceate allergens
-(["Peanuts and Tree Nuts"] + %w[Seafood/Shellfish Milk Egg Soy Wheat Gulten]).each do |allergen|
+(["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gulten]).each do |allergen|
   Allergen.create(name: allergen)
 end
 
@@ -20,14 +20,35 @@ end
   allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
 end
 
-# 2. Seafood/Shellfish:
+#2 Shellfish
 
-['abalone', 'barnacle', 'crab', 'crawfish', 'crayfish', 'ecrevisse', 'krill', 'lobster', 'langouste', 'langoustine', 'moreton bay bugs', 'scampi', 'tomalley', 'prawns', 'shrimp', 'abdone', 'clams', 'cockle', 'cuttlefish', 'limpet', 'lapas', 'opihil', 'mussels', 'octopus', 'oysters', 'periwinkle', 'sea cucumber', 'sea urchin', 'scallops', 'snails', 'ecargot', 'squid', 'calamari', 'whelk', 'turban shell', 'caviar', 'fish flavoring', 'fish flour', 'fish fume', 'fish gelatin', 'kosher gelatin', 'marine gelatin', 'fish oil', 'fish sauce', 'imitation fish', 'shellfish', 'isinglass', 'lutefisk maw', 'maws', 'fish maw', 'fish stock', 'fishmeal', 'nuoc mam', 'roe', 'seafood flavoring', 'crab extract', 'clam extract', 'shark cartilage', 'shark fin', 'surimi', 'sashimi', 'worcestershire sauce', 'cuttlefish ink', 'fish stock', 'glucosamine', 'bouillabaisse', 'cod', 'flounder', 'haddock', 'perch', 'salmon', 'tilapia', 'tuna', 'parvalbumin', 'anchovy', 'bass', 'catfish', 'grouper', 'hake', 'halibut', 'herring', 'mahi mahi', 'pike', 'pollock', 'snapper', 'sole', 'swordfish', 'trout', 'walleye'].map(&:capitalize).each do |ingredient|
-  allergen = Allergen.find_by_name("Seafood/Shellfish")
-  ingredient = Ingredient.find_or_create_by(name: ingredient)
-  ingredient.allergens << allergen   unless ingredient.allergens.include? allergen
-  allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+[ 'Barnacle', 'Crab', 'Crawfish', 'Crawdad', 'Crayfish', 'Ecrevisse', 'Krill',
+  'Lobster', 'Langouste', 'langoustine', 'Moreton bay bugs', 'scampi', 'tomalley',
+  'Prawns', 'Shrimp', 'crevette', 'abalone', 'clams', 'cockles', 'mussels',
+  'oysters', 'octopi', 'scallops', 'snails', 'esgargot', 'squid', 'calamari'].map(&:capitalize).each do |ingredient|
+    allergen = Allergen.find_by_name("Shellfish")
+    ingredient = Ingredient.find_or_create_by(name: ingredient)
+    ingredient.allergens << allergen unless ingredient.allergens.include? allergen
+    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+end
 
+#3 Seafood
+
+['abdone', 'cuttlefish', 'limpet', 'lapas', 'opihil', 'periwinkle', 'sea cucumber',
+  'sea urchin', 'whelk', 'turban shell', 'caviar', 'fish flavoring', 'fish flour',
+  'fish fume', 'fish gelatin', 'kosher gelatin', 'marine gelatin', 'fish oil',
+  'fish sauce', 'imitation fish', 'isinglass', 'lutefisk maw', 'maws', 'fish maw',
+  'fish stock', 'fishmeal', 'nuoc mam', 'roe', 'seafood flavoring', 'crab extract',
+  'clam extract', 'shark cartilage', 'shark fin', 'surimi', 'sashimi', 'worcestershire sauce',
+  'cuttlefish ink', 'fish stock', 'glucosamine', 'bouillabaisse', 'cod', 'flounder',
+  'haddock', 'perch', 'salmon', 'tilapia', 'tuna', 'parvalbumin', 'anchovy', 'bass',
+  'catfish', 'grouper', 'hake', 'halibut', 'herring', 'mahi mahi', 'pike', 'pollock',
+  'snapper', 'sole', 'swordfish', 'trout', 'walleye'].map(&:capitalize).each do |ingredient|
+    allergen = Allergen.find_by_name("Seafood")
+    ingredient = Ingredient.find_or_create_by(name: ingredient)
+    ingredient.allergens << allergen unless ingredient.allergens.include? allergen
+    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
+end
 end
 
 # 3. Milk:

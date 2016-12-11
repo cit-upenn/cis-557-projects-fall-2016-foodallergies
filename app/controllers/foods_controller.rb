@@ -11,10 +11,12 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
-    @ingredients = FoodApi.retrieve_results(@food.name)
-    @ingredients.map(&:capitalize).each do |ingredient|
-      ingredient = Ingredient.find_or_create_by(name: ingredient)
-      @food.ingredients << ingredient unless @food.ingredients.include? ingredient
+    if @food != nil
+      @ingredients = FoodApi.retrieve_results(@food.name)
+      @ingredients.map(&:capitalize).each do |ingredient|
+        ingredient = Ingredient.find_or_create_by(name: ingredient)
+        @food.ingredients << ingredient unless @food.ingredients.include? ingredient
+      end      
     end
   end
 
