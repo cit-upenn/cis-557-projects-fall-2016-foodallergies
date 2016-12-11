@@ -13,7 +13,7 @@ end
 
 
 # 1. Peanuts and Tree Nuts:
-['peanuts', 'almonds', 'beechnuts', 'Brazil nuts', 'butternuts', 'cashews', 'chestnuts',
+[ 'peanuts', 'almonds', 'beechnuts', 'Brazil nuts', 'butternuts', 'cashews', 'chestnuts',
   'chinquapin nuts', 'filberts', 'azelnuts', 'ginkgo nuts', 'hickory nuts', 'lychee nuts',
   'macadamia nuts', 'Nangai nuts', 'natural nut extract', 'pecans', 'pili nuts', 'pine nuts',
   'pistachios', 'shea nuts', 'walnuts', 'coconut', 'artificial nuts', 'beer nuts',
@@ -42,7 +42,7 @@ end
 
 #3 Seafood
 
-['abdone', 'cuttlefish', 'limpet', 'lapas', 'opihil', 'periwinkle', 'sea cucumber',
+[ 'abdone', 'cuttlefish', 'limpet', 'lapas', 'opihil', 'periwinkle', 'sea cucumber',
   'sea urchin', 'whelk', 'turban shell', 'caviar', 'fish flavoring', 'fish flour',
   'fish fume', 'fish gelatin', 'kosher gelatin', 'marine gelatin', 'fish oil',
   'fish sauce', 'imitation fish', 'isinglass', 'lutefisk maw', 'maws', 'fish maw',
@@ -60,7 +60,7 @@ end
 
 # 4. Milk:
 
-['butter', 'butter fat', 'butter oil', 'butter acid', 'butter esters', 'buttermilk',
+[ 'butter', 'butter fat', 'butter oil', 'butter acid', 'butter esters', 'buttermilk',
   'casein', 'casein hydrolysate', 'caseinates', 'cheese', 'cottage cheese',
   'cream', 'curds', 'custard', 'diacetyl ghee', 'half-and-half', 'lactalbumin',
   'lactalbumin phosphate', 'lactoferrin', 'lactose', 'lactulose', 'condensed milk',
@@ -77,7 +77,7 @@ end
 end
 
 # 5.  Egg:
-['egg', 'albumin', 'albumen', 'dried egg', 'powdered egg', 'egg solid', 'white egg',
+[ 'egg', 'albumin', 'albumen', 'dried egg', 'powdered egg', 'egg solid', 'white egg',
   'egg yolk', 'eggnog', 'globulin', 'livetin', 'lysozyme', 'mayonnaise', 'meringue',
   'meringue powder', 'surimi', 'vitellin', 'ovalbumin', 'turkey egg', 'goose egg',
   'quail egg', 'chicken egg', 'duck egg', 'ice cream', 'lecithin', 'marzipan',
@@ -89,7 +89,7 @@ end
 end
 
 # 6. Soy:
-['soy', 'edamame', 'miso', 'natto soy', 'soy albumin', 'soy cheese', 'soy fiber',
+[ 'soy', 'edamame', 'miso', 'natto soy', 'soy albumin', 'soy cheese', 'soy fiber',
   'soy flour', 'soy grits', 'soy ice cream', 'soy milk', 'soy nuts', 'soy sprouts',
   'soy yogurt', 'soya soybean', 'curd', 'granules', 'soy protein concentrate',
   'hydrolyzed soy protein', 'soy protein isolate', 'shoyu', 'soy sauce', 'tamari',
@@ -101,7 +101,7 @@ end
 end
 
 # 7. Gluten:
-['wheat', 'bread crumbs', 'bulgur', 'cereal extract', 'club wheat', 'couscous',
+[ 'wheat', 'bread crumbs', 'bulgur', 'cereal extract', 'club wheat', 'couscous',
   'cracker meal', 'durum', 'einkorn', 'emmer', 'farina', 'all purpose flour',
   'bread flour', 'cake flour', 'durum flour', 'enriched flour', 'graham flour',
   'high gluten flour', 'high protein flour', 'instant flour', 'pastry flour',
@@ -130,7 +130,7 @@ end
 end
 
 # 8 Wheat
-['wheat', 'bread crumbs', 'bulgur', 'cereal extract', 'club wheat', 'couscous',
+[ 'wheat', 'bread crumbs', 'bulgur', 'cereal extract', 'club wheat', 'couscous',
   'cracker meal', 'durum', 'einkorn', 'emmer', 'farina', 'all purpose flour',
   'bread flour', 'cake flour', 'durum flour', 'enriched flour', 'graham flour',
   'high gluten flour', 'high protein flour', 'instant flour', 'pastry flour','self-rising flour',
