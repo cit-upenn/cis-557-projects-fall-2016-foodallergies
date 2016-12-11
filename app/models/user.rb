@@ -18,6 +18,7 @@
 #  provider               :string
 #  uid                    :string
 #  username               :string
+#  admin                  :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
