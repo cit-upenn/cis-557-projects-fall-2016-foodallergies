@@ -5,15 +5,15 @@ class UsersController < ApplicationController
     end
 
 	def settings
-		@user = User.find(params[:id])
-		@name = User.find(params[:id]).username
+		@user = current_user
+		@name = current_user.username
 	end
 
 	def update
-	  @user = User.find(params[:id])
+	  @user = current_user
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to @user, 
+          format.html { redirect_to static_page_home_path, 
              notice: 'User settings were successfully updated.'}
           # format.html { redirect_to controller: 'users', action: 'settings', id: current_user.id, 
           # 	notice: 'User settings was successfully updated.'}
