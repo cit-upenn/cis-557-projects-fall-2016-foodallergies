@@ -1,0 +1,33 @@
+<center><h1>My Food Diary</h1></center>
+<b>Username: <%= current_user.username %><br>
+Timestamp: <%= Time.new.strftime("%Y-%m-%d %H:%M:%S") %></b><br>
+
+<table>
+  <thead>
+    <tr align="center">
+      <th width = "20%">Date and Time</th>
+      <th width = "20%">Meal</th>
+      <th width = "20%">Food Name</th>
+      <th width = "20%">Amount (Serving Size)</th>
+      <th width = "20%">Allergens?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diary_entries.each do |diary_entry| %>
+      <tr align="center">
+        <td><%= diary_entry.time.to_formatted_s(:short) %></td>
+        <td><%= diary_entry.meal %></td>
+        <td><%= diary_entry.food %></td>
+        <td><%= diary_entry.amount %></td>
+        <td>
+          <% if get_allergens(diary_entry.food).empty? %>
+            <font color="green">Free</font>
+          <% else %>
+            <font color="red">Detected</font>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

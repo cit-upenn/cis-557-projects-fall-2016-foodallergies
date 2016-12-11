@@ -74,12 +74,11 @@
 Rails.application.routes.draw do
 
   get 'static_page/home'
+  get 'static_page/help'
 
   root 'static_page#home'
 
   match 'search_food', to: 'foods#search', via: :get, as: :foods_search
-
-  get 'static_page/help'
 
   devise_for :users, :controllers => { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -102,6 +101,8 @@ Rails.application.routes.draw do
       get 'sort/:field' => 'diary_entries#sort'
     end
   end
+
+  post 'diary_entries/download'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
