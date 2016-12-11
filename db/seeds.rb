@@ -149,5 +149,5 @@ end
     allergen = Allergen.find_by_name("Wheat")
     ingredient = Ingredient.find_or_create_by(name: ingredient)
     ingredient.allergens << allergen   unless ingredient.allergens.include? allergen
-    allergen.ingredients << ingredient unle
+    allergen.ingredients << ingredient unless allergen.ingredients.include? ingredient
   end
