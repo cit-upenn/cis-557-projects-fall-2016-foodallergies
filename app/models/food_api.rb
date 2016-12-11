@@ -55,6 +55,7 @@ class FoodApi < ActiveRecord::Base
 
      ingredient_url = FoodApi.ingredient_url(keyword)
      if ingredient_url != nil
+
         data = FoodApi.getData(ingredient_url)
         #  logger.info data
         data.gsub('Ingredients: ', '').gsub(/Date.*/, '').gsub('.', '').split(',').map(&:strip)
@@ -64,4 +65,3 @@ class FoodApi < ActiveRecord::Base
     end
   end
 end
-
