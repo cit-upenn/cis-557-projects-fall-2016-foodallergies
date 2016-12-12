@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="jumbotron">
 <h2>Settings</h2>
+</div>
+
+<div class="jumbotron" id="settings">
 Change your settings <%= @name %>!
 
 <%= form_for(@user) do |f| %>
@@ -16,4 +20,5 @@ Change your settings <%= @name %>!
     <%= f.submit %>
   </div>
 <% end %>
+</div>
 
