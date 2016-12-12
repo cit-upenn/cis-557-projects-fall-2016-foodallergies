@@ -17,7 +17,7 @@
   <%= link_to "Look up Food", foods_search_path, class: "btn btn-md btn-primary active" %>
   <%= link_to "Add Food", foods_path, class: "btn btn-md btn-primary active" %>
   <%= link_to "Weight Tracker", weights_path, class: "btn btn-md btn-primary active" %>
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
   <%= link_to "Check Patients Info", users_path, class: "btn btn-md btn-primary active" %>
   <% end %>
 
