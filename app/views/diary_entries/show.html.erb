@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% allergens = get_allergens(@diary_entry.food) %>
-<% if not get_allergens(@diary_entry.food).empty? %>
+<% if not allergens.empty? and not allergens[0] == "Unknown" %>
   <div class="alert">
     <strong>WARNING: </strong> Allergens detected! We suggest you not taking this entry.
   </div>

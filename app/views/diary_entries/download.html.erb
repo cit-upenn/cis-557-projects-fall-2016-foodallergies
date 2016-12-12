@@ -21,8 +21,11 @@ Timestamp: <%= Time.new.strftime("%Y-%m-%d %H:%M:%S") %></b><br>
         <td><%= diary_entry.food %></td>
         <td><%= diary_entry.amount %></td>
         <td>
-          <% if get_allergens(diary_entry.food).empty? %>
+          <% allergens = get_allergens(diary_entry.food) %>
+          <% if allergens.empty? %>
             <font color="green">Free</font>
+          <% elsif allergens.length == 1 and allergens[0] == "Unknown" %>
+            <font color="orange">Unknown</font>
           <% else %>
             <font color="red">Detected</font>
           <% end %>

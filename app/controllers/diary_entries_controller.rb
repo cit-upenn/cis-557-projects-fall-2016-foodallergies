@@ -47,6 +47,10 @@ class DiaryEntriesController < ApplicationController
     # end
     # second, search from API
     ingredients = FoodApi.retrieve_results(foodname)
+    if ingredients.empty?
+      result << "Unknown"
+      return result
+    end
     ingredients.map(&:capitalize).each do |ingredient|
       ingredient = Ingredient.find_or_create_by(name: ingredient)
       ingredient.allergens.each do |a|
