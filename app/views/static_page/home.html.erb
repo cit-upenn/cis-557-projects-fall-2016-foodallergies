@@ -6,19 +6,35 @@
   <body>
 
   <div class="center jumbotron">
+
+  <%= render 'carousel' %>
   <h1>
     Welcome to the Food Allergies Tracker <br>
     <small>We help you manage your health!<br>
     <%= current_user.username %></small>
   </h1>
   <br>
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <h2 class="glyphicon glyphicon-list-alt"></h2>
+      <h4><%= link_to "My Food Diary", diary_entries_path, class: "thumbnail" %></h4>
+      </div>
+    <div class="col-sm-6 col-md-3">
+      <h2 class="glyphicon glyphicon-search"></h2>
+      <h4><%= link_to "Look up Food", foods_search_path, class: "thumbnail" %></h4>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <h2 class="glyphicon glyphicon-pencil"></h2>
+      <h4><%= link_to "Add Food", foods_path, class: "thumbnail" %></h4>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <h2 class="glyphicon glyphicon-option-horizontal"></h2>
+      <h4><%= link_to "Weight Tracker", weights_path, class: "thumbnail" %></h4>
+    </div>
+  </div>
 
-  <%= link_to "My Food Diary", diary_entries_path, class: "btn btn-md btn-primary active" %>
-  <%= link_to "Look up Food", foods_search_path, class: "btn btn-md btn-primary active" %>
-  <%= link_to "Add Food", foods_path, class: "btn btn-md btn-primary active" %>
-  <%= link_to "Weight Tracker", weights_path, class: "btn btn-md btn-primary active" %>
-  <% if current_user && current_user.admin? %>
-  <%= link_to "Check Patients Info", users_path, class: "btn btn-md btn-primary active" %>
+  <% if current_user.admin? %>
+  <h4><%= link_to "Check Patients Info", users_path, class: "thumbnail" %></h4>
   <% end %>
 
   </div>

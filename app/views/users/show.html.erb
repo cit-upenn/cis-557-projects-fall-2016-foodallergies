@@ -1,1 +1,41 @@
 <p id="notice"><%= notice %></p>
+
+<h1>Info of <%= @user.username %></h1>
+
+</br>
+<ul>
+  <h4>Allergies</h4>
+  <% @user.allergens.each do |allergen| %>
+  <li><%= allergen.name %></li>
+  <% end %>
+</ul>
+</br>
+
+<table class="table table-hover">
+  <thead>
+    <tr align="center">
+      <th width = "14.4%">Date and Time</th>
+      <th width = "14.4%">Meal</th>
+      <th width = "14.4%">Food Name</th>
+      <th width = "14.4%">Amount (Serving Size)</th>
+      <th width = "18%"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diary_entries.each do |diary_entry| %>
+      <tr>
+        <td><%= diary_entry.time.to_formatted_s(:short) %></td>
+        <td><%= diary_entry.meal %></td>
+        <td><%= diary_entry.food %></td>
+        <td><%= diary_entry.amount %></td>
+        <td>
+            <%= link_to 'Show', diary_entry, :class => 'btn btn-success btn-s active' %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', users_path, :class => 'btn btn-default' %>
