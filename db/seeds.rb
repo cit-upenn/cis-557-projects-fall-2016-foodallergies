@@ -13,11 +13,6 @@
     password_confirmation: "12345678")
     admin.update_attribute :admin, true
 
-    # => ceate allergens
-    (["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gulten]).each do |allergen|
-       Allergen.create(name: allergen)
-    end
- 
 
 # => ceate allergens
 (["Peanuts and Tree Nuts"] + %w[Seafood Shellfish Milk Egg Soy Wheat Gluten]).each do |allergen|
