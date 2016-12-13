@@ -49,7 +49,6 @@ gem 'typhoeus'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
 
-
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -69,6 +68,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'simplecov'
   gem 'rspec-rails', '~> 3.5'
+  gem "factory_girl_rails"
+  gem "warden"
 end
 
 
