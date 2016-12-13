@@ -21,21 +21,35 @@ class FoodsController < ApplicationController
   end
 
   def search
-    @result = []
-    @user = current_user
-    @user_allergen = []
+
+    myAllergens = Array.new   # get allergens of the user
+    @result = Array.new
+    @foodAllergens = Array.new
     if params[:search] != nil
-      @food_query = Food.where("name = ?", params[:search])
+      foodname = params[:search]
     end
-    if @food_query != nil and @food_query.first != nil
-       @result = @food_query.first.allergens.uniq
-       @result.each do |x|
-         @user.allergens.uniq.each do |y|
-           if x.name == y.name
-             @user_allergen.push(x.name)
-           end
-         end
-       end
+
+    if foodname != nil and foodname != ""
+      User.find(current_user.id).allergens.each do |a|
+        myAllergens << a.name
+      end
+
+      ingredients = FoodApi.retrieve_results(foodname)
+      if ingredients.empty?
+        @result << "Unknown"
+        return @result
+      end
+      ingredients.map(&:capitalize).each do |ingredient|
+        ingredient = Ingredient.find_or_create_by(name: ingredient)
+        ingredient.allergens.each do |a|
+          @foodAllergens << a.name
+          if myAllergens.include? a.name
+            @result << a.name
+          end
+        end
+      end
+      @result.uniq!
+      @foodAllergens.uniq!
     end
   end
 
