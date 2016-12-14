@@ -11,4 +11,9 @@ FactoryGirl.define do
     	weight                 50
     	date = Date.today
     end
+
+    factory :diary_entry do
+        food                  "Sushi"
+        amount                123
+    end
 end
