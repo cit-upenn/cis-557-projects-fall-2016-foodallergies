@@ -1,7 +1,7 @@
 DiaryEntry (functionality/ view):
 - The feature of detecting allergens is added to the diary, which support interaction with database or API. The user can see the detailed allergens and will be alert if they are on the page of the specific diary entry page (show page). This feature is enabled by the helper method in controller to be accessed by views. However the interaction with API from the index page takes a longer time, which could be improved.
 
-The download feature for diary is also added, which is enabled by gem and interaction between controller and the download.html.erb view.
+- The download feature for diary is also added, which is enabled by gem and interaction between controller and the download.html.erb view.
 
 
 
