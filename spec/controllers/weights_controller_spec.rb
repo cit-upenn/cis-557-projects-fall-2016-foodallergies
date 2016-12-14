@@ -25,5 +25,6 @@ RSpec.describe WeightsController, :type => :controller do
 
       expect(weight.weight).to eq 50
     end
+
   end
 end
