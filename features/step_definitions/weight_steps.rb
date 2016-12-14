@@ -8,7 +8,7 @@ When(/^I try to add a new daily weight$/) do
 end
 
 Then(/^I should be able to see the weight record page$/) do
-	assert page.has_content?("Weight was successfully created.")
+	expect(page).to have_content("Weight was successfully created.")
 end
 
 When(/^I try to add a new daily weight without weight$/) do
@@ -16,7 +16,7 @@ When(/^I try to add a new daily weight without weight$/) do
 end
 
 Then(/^I should see some errors on the weight page$/) do
-	assert page.has_content?("Weight can't be blank")
+	expect(page).to have_content("Weight can't be blank")
 end
 
 When(/^I try to add a new daily weight with a date field$/) do
@@ -31,5 +31,5 @@ When(/^I try to add a new daily weight whose number is smaller than zero$/) do
 end
 
 Then(/^I should be able to see some format errors$/) do
-	assert page.has_content?("Weight must be greater than 0")
+	expect(page).to have_content("Weight must be greater than 0")
 end

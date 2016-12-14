@@ -17,7 +17,7 @@ When (/^I add an existing user with username and password$/) do
 end
 
 Then (/^I should be able to see the succesful notice$/) do
-	assert page.has_content?("Signed in successfully.")
+	expect(page).to have_content("Signed in successfully.")
 end
 
 When (/^I add an existing user with email and password$/) do
@@ -27,7 +27,7 @@ When (/^I add an existing user with email and password$/) do
 end
 
 Then (/^I should also be able to see the success notice$/) do
-	assert page.has_content?("Signed in successfully.")
+	expect(page).to have_content("Signed in successfully.")
 end
 
 When (/^click the sign out button$/) do
@@ -35,7 +35,7 @@ When (/^click the sign out button$/) do
 end
 
 Then (/^I should be able to sign out and see sign up page$/) do
-	assert page.has_content?("You need to sign in or sign up before continuing.")
+	expect(page).to have_content("You need to sign in or sign up before continuing.")
 end
 
 Given (/^I have logged in$/) do

@@ -36,7 +36,7 @@ When(/^I add a nonexistent food to the data base$/) do
 end
 
 Then(/^I should be able to add a food$/) do
-	assert page.has_content?("Food was successfully created.")
+	expect(page).to have_content("Food was successfully created.")
 end
 
 When(/^I add a food without a name to the database$/) do
@@ -44,7 +44,7 @@ When(/^I add a food without a name to the database$/) do
 end
 
 Then(/^I should see some errors on the food page$/) do
-	assert page.has_content?("Name can't be blank")
+	expect(page).to have_content("Name can't be blank")
 end
 
 When(/^I add a new food whose first letter is not capitalized to the database$/) do
@@ -53,7 +53,7 @@ When(/^I add a new food whose first letter is not capitalized to the database$/)
 end
 
 Then(/^I should be able to see some errors for adding these bad format food$/) do
-	assert page.has_content?("Name must start with upper case")
+	expect(page).to have_content("Name must start with upper case")
 end
 
 # When(/^I add a new food whose barcode is identical to an existing food$/) do
@@ -93,5 +93,5 @@ When(/^I change the name of the food$/) do
 end
 
 Then(/^I should be able to see the food with new name$/) do
-	assert page.has_content?("Cucumber")
+	expect(page).to have_content("Cucumber")
 end

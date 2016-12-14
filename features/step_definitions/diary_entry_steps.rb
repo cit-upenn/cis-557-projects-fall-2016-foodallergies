@@ -9,7 +9,7 @@ When(/^I try to add a new diary entry$/) do
 end
 
 Then(/^I should be able to see the new diary entry's page$/) do 
-	assert page.has_content?("Diary entry was successfully created.")
+	expect(page).to have_content("Diary entry was successfully created.")
 end
 
 
@@ -19,7 +19,7 @@ When(/^I try to add a new diary entry without a food name$/) do
 end
 
 Then(/^I should see some errors saying food cant be blank on the page$/) do 
-	assert page.has_content?("Food can't be blank")
+	expect(page).to have_content("Food can't be blank")
 end
 
 When(/^I click edit the page$/) do
@@ -33,7 +33,7 @@ When(/^I try to change the entry values$/) do
 end
 
 Then(/^I should see the entry has been updated$/) do 
-	assert page.has_content?("Diary entry was successfully updated.")
+	expect(page).to have_content("Diary entry was successfully updated.")
 end
 
 
@@ -53,5 +53,5 @@ When(/^I try to abort editing and go back to the diary$/) do
 end
 
 Then(/^I should see the diary page$/) do 
-	assert page.has_content?("My Food Diary")
+	expect(page).to have_content("My Food Diary")
 end
