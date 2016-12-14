@@ -59,7 +59,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'capybara'
   gem 'database_cleaner'
@@ -70,6 +69,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails"
   gem "warden"
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
 end
 
 

@@ -12,6 +12,18 @@ FactoryGirl.define do
     	date = Date.today
     end
 
+    factory :allergen do
+        name                   "Egg"
+    end
+
+    factory :food do
+        name                   "Oreo"
+        product_barcode        1234
+    end
+
+    factory :ingredient do
+        name                   "Milk"
+
     factory :diary_entry do
         food                  "Sushi"
         amount                123

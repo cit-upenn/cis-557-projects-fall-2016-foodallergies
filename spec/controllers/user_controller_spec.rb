@@ -18,4 +18,15 @@ RSpec.describe UsersController, :type => :controller do
     get 'index'
     response.should be_success
   end
+
+  it "should get show" do
+    get :show, id: @user
+    response.should be_success
+  end
+
+  it "should get settings" do
+    get :settings
+    response.should be_success
+  end
+
 end
