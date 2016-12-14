@@ -11,7 +11,7 @@ When (/^I try to add a new user$/) do
 end
 
 Then (/^I should be able to see the homepage after signed in$/) do
-	assert page.has_content?("Welcome!")
+	expect(page).to have_content("Welcome!")
 end
 
 When (/^I add a new user without username field$/) do
@@ -22,7 +22,7 @@ When (/^I add a new user without username field$/) do
 end
 
 Then (/^I can't create an user without username$/) do
-	assert page.has_content?("Username can't be blank")
+	expect(page).to have_content("Username can't be blank")
 end
 
 When (/^I add a new user without email field$/) do
@@ -33,7 +33,7 @@ When (/^I add a new user without email field$/) do
 end
 
 Then (/^I can't create an user without email$/) do
-	assert page.has_content?("Email can't be blank")
+	expect(page).to have_content("Email can't be blank")
 end
 
 When (/^I try to fill the username field with an email address$/) do
@@ -45,7 +45,7 @@ When (/^I try to fill the username field with an email address$/) do
 end
 
 Then (/^I can't create an user and cause some errors$/) do
-	assert page.has_content?("Username is invalid")
+	expect(page).to have_content("Username is invalid")
 end
 
 When (/^I add a new user but password does not match$/) do
@@ -56,5 +56,5 @@ When (/^I add a new user but password does not match$/) do
 end
 
 Then (/^I can't create an user when password does not match$/) do
-	assert page.has_content?("Password confirmation doesn't match Password")
+	expect(page).to have_content("Password confirmation doesn't match Password")
 end

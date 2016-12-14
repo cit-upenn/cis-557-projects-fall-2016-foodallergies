@@ -8,7 +8,7 @@ When(/^I add a nonexistent ingredient to the database$/) do
 end
 
 Then(/^I should be able to add an ingredient$/) do
-	assert page.has_content?("Ingredient was successfully created.")
+	expect(page).to have_content("Ingredient was successfully created.")
 end
 
 When(/^I add a nonexistent ingredient without a name to the database$/) do
@@ -16,7 +16,7 @@ When(/^I add a nonexistent ingredient without a name to the database$/) do
 end
 
 Then(/^I should be able to see some errors on the ingredient page$/) do
-	assert page.has_content?("Name can't be blank")
+	expect(page).to have_content("Name can't be blank")
 end
 
 When(/^I add an existing ingredient to the database$/) do
@@ -28,7 +28,7 @@ When(/^I add an existing ingredient to the database$/) do
 end
 
 Then(/^I should be able to see some errors for adding a duplicate ingredient$/) do
-	assert page.has_content?("Name has already been taken")
+	expect(page).to have_content("Name has already been taken")
 end
 
 When(/^I add a new ingredient whose first letter is not capitalized to the database$/) do
@@ -37,5 +37,5 @@ When(/^I add a new ingredient whose first letter is not capitalized to the datab
 end
 
 Then(/^I should be able to see some errors for adding these bad format ingredient$/) do
-	assert page.has_content?("Name must start with upper case")
+	expect(page).to have_content("Name must start with upper case")
 end
