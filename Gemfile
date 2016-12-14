@@ -67,14 +67,9 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'simplecov'
-<<<<<<< HEAD
-  #gem 'rspec-rails', '~> 3.5'
-  #gem 'factory_girl'
-=======
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails"
   gem "warden"
->>>>>>> 2c8389d853c18350077cbbe26eefd2445625fbd0
 end
 
 
