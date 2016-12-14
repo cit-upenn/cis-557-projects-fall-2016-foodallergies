@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class AllergensControllerTest < ActionController::TestCase
+  #include Devise::TestHelpers
+
   setup do
+  #   @request.env["devise.mapping"] = Devise.mappings[:admin]
+  #   sign_in FactoryGirl.create(:admin)
     @allergen = allergens(:one)
   end
 
