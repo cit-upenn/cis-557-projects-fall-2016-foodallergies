@@ -16,8 +16,8 @@ When (/^I add an existing user with username and password$/) do
 	click_button 'Log in'
 end
 
-Then (/^I should be able to see the succesful notice$/) do
-	expect(page).to have_content("Signed in successfully.")
+Then (/^I should be able to see the sign-in page again$/) do
+	expect(page).to have_content("Log in to Allergies Tracker")
 end
 
 When (/^I add an existing user with email and password$/) do

@@ -16,4 +16,4 @@ Feature: User log in page
 		Given I have set up the user database
 		   And I'm on the user sign in page
 		When I add an existing user with email and password
-		Then I should also be able to see the success notice
+		Then I should also be able to see the sign-in page again
