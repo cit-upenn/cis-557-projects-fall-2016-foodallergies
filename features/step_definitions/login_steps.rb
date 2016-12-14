@@ -16,7 +16,7 @@ When (/^I add an existing user with username and password$/) do
 	click_button 'Log in'
 end
 
-Then (/^I should be able to see the homepage after logged in$/) do
+Then (/^I should be able to see the succesful notice$/) do
 	assert page.has_content?("Signed in successfully.")
 end
 
@@ -26,7 +26,7 @@ When (/^I add an existing user with email and password$/) do
 	click_button 'Log in'
 end
 
-Then (/^I should be able to see the homepage and success notice$/) do
+Then (/^I should also be able to see the success notice$/) do
 	assert page.has_content?("Signed in successfully.")
 end
 
