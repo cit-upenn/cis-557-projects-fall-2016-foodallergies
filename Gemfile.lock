@@ -279,7 +279,6 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
-  cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
   devise (~> 3.4)
