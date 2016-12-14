@@ -23,6 +23,7 @@ FactoryGirl.define do
 
     factory :ingredient do
         name                   "Milk"
+    end
 
     factory :diary_entry do
         food                  "Sushi"
