@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe WeightsController, :type => :controller do
+RSpec.describe AllergensController, :type => :controller do
   before(:each) do
     @user = FactoryGirl.create(:user)
     @current_user = @user
@@ -19,11 +19,11 @@ RSpec.describe WeightsController, :type => :controller do
       expect(response).to render_template("index")
     end
 
-    it "loads all of the weights" do
-      weight = FactoryGirl.create(:weight)
+    it "loads all of the allergens" do
+      allergen = FactoryGirl.create(:allergen)
       get :index
 
-      expect(weight.weight).to eq 50
+      expect(allergen.name).to eq "Egg"
     end
 
   end

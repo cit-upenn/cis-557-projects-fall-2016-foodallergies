@@ -39,27 +39,28 @@ class AllergensController < ApplicationController
 
   # PATCH/PUT /allergens/1
   # PATCH/PUT /allergens/1.json
-  def update
-    respond_to do |format|
-      if @allergen.update(allergen_params)
-        format.html { redirect_to @allergen, notice: 'Allergen was successfully updated.' }
-        format.json { render :show, status: :ok, location: @allergen }
-      else
-        format.html { render :edit }
-        format.json { render json: @allergen.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # except the route of update and destroy
+  # def update
+  #   respond_to do |format|
+  #     if @allergen.update(allergen_params)
+  #       format.html { redirect_to @allergen, notice: 'Allergen was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @allergen }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @allergen.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /allergens/1
   # DELETE /allergens/1.json
-  def destroy
-    @allergen.destroy
-    respond_to do |format|
-      format.html { redirect_to allergens_url, notice: 'Allergen was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @allergen.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to allergens_url, notice: 'Allergen was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

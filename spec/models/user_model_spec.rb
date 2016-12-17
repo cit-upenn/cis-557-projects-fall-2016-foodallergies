@@ -8,4 +8,5 @@ RSpec.describe User, :type => :model do
     it "should be the testUser" do
     	expect(@user.username).to eq "testUser"
     end
+
 end
