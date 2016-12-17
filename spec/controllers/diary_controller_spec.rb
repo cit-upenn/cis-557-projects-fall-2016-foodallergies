@@ -34,7 +34,13 @@ RSpec.describe DiaryEntriesController, :type => :controller do
 
     it "should be able to sort the diary" do
       diary_entry = FactoryGirl.create(:diary_entry)
-      get :sort, field: :name
+      get :sort, field: :food
+      expect(response).to be_success
+    end
+
+    it "should be able to sort the diary" do
+      diary_entry = FactoryGirl.create(:diary_entry)
+      post :download
       expect(response).to be_success
     end
 
