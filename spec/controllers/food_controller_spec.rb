@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe DiaryEntriesController, :type => :controller do
+RSpec.describe FoodsController, :type => :controller do
   before(:each) do
     @user = FactoryGirl.create(:user)
     @current_user = @user
@@ -19,22 +19,22 @@ RSpec.describe DiaryEntriesController, :type => :controller do
       expect(response).to render_template("index")
     end
 
-    it "loads the created diary entry" do
-      diary_entry = FactoryGirl.create(:diary_entry)
+    it "loads the created foods" do
+      food = FactoryGirl.create(:food)
       get :index
 
-      expect(diary_entry.amount).to eq 123
+      expect(food.name).to eq "Oreo"
     end
 
-    it "test destory the diary" do
-      diary_entry = FactoryGirl.create(:diary_entry)
-      delete :destroy, id: diary_entry.id
+    it "test destory the food" do
+      food = FactoryGirl.create(:food)
+      delete :destroy, id: food.id
       expect(response).not_to be_success
     end
 
-    it "should be able to sort the diary" do
-      diary_entry = FactoryGirl.create(:diary_entry)
-      get :sort, field: :name
+    it "should be able to search the food" do
+      food = FactoryGirl.create(:food)
+      get :search, search: "Oreo"
       expect(response).to be_success
     end
 

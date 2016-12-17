@@ -34,8 +34,8 @@ When (/^click the sign out button$/) do
 	click_link 'Signout'
 end
 
-Then (/^I should be able to sign out and see sign up page$/) do
-	expect(page).to have_content("You need to sign in or sign up before continuing.")
+Then (/^I should be able to sign out and see log in page$/) do
+	expect(page).to have_content("Log in to Allergies Tracker")
 end
 
 Given (/^I have logged in$/) do

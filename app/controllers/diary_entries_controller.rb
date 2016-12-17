@@ -7,9 +7,9 @@ class DiaryEntriesController < ApplicationController
     @diary_entries = DiaryEntry.where("user_id = ?", current_user.id).order('time')
   end
 
-  def admin_index
-    @diary_entries = DiaryEntry.all.order('time')
-  end
+  # def admin_index
+  #   @diary_entries = DiaryEntry.all.order('time')
+  # end
 
   # GET /diary_entries/1
   # GET /diary_entries/1.json

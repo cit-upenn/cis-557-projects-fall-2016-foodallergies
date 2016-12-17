@@ -26,7 +26,7 @@ FactoryGirl.define do
     end
 
     factory :diary_entry do
-        food                  "Sushi"
-        amount                123
+        food                   "Sushi"
+        amount                 123
     end
 end

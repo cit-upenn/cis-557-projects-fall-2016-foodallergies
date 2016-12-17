@@ -10,7 +10,7 @@ Feature: User log in page
 		When I add an existing user with username and password
 		Then I should be able to see the succesful notice
 		When click the sign out button
-		Then I should be able to sign out and see sign up page
+		Then I should be able to sign out and see log in page
 
 	Scenario: Log in as an existing user with email
 		Given I have set up the user database

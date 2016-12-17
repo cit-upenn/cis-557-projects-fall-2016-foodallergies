@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe DiaryEntriesController, :type => :controller do
+RSpec.describe WeightsController, :type => :controller do
   before(:each) do
     @user = FactoryGirl.create(:user)
     @current_user = @user
@@ -19,23 +19,23 @@ RSpec.describe DiaryEntriesController, :type => :controller do
       expect(response).to render_template("index")
     end
 
-    it "loads the created diary entry" do
-      diary_entry = FactoryGirl.create(:diary_entry)
+    it "loads all of the weights" do
+      weight = FactoryGirl.create(:weight)
       get :index
 
-      expect(diary_entry.amount).to eq 123
+      expect(weight.weight).to eq 50
     end
 
-    it "test destory the diary" do
-      diary_entry = FactoryGirl.create(:diary_entry)
-      delete :destroy, id: diary_entry.id
+    it "update the weight" do
+      weight = FactoryGirl.create(:weight)
+      put :update, id: weight.id, :weight => FactoryGirl.attributes_for(:weight)
       expect(response).not_to be_success
     end
 
-    it "should be able to sort the diary" do
-      diary_entry = FactoryGirl.create(:diary_entry)
-      get :sort, field: :name
-      expect(response).to be_success
+    it "test destory the weight" do
+      weight = FactoryGirl.create(:weight)
+      delete :destroy, id: weight.id
+      expect(response).not_to be_success
     end
 
   end
