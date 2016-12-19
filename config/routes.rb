@@ -2,9 +2,9 @@
 #
 #                   Prefix Verb     URI Pattern                            Controller#Action
 #         static_page_home GET      /static_page/home(.:format)            static_page#home
-#                     root GET      /                                      static_page#home
-#             foods_search GET      /search_food(.:format)                 foods#search
 #         static_page_help GET      /static_page/help(.:format)            static_page#help
+#                     root GET      /                                      users#settings
+#             foods_search GET      /search_food(.:format)                 foods#search
 #         new_user_session GET      /users/sign_in(.:format)               users/sessions#new
 #             user_session POST     /users/sign_in(.:format)               users/sessions#create
 #     destroy_user_session DELETE   /users/sign_out(.:format)              users/sessions#destroy
@@ -69,6 +69,7 @@
 #                          PATCH    /diary_entries/:id(.:format)           diary_entries#update
 #                          PUT      /diary_entries/:id(.:format)           diary_entries#update
 #                          DELETE   /diary_entries/:id(.:format)           diary_entries#destroy
+#   diary_entries_download POST     /diary_entries/download(.:format)      diary_entries#download
 #
 
 Rails.application.routes.draw do
