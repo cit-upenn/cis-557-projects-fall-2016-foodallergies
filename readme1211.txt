@@ -3,7 +3,8 @@ DiaryEntry (functionality/ view):
 
 - The download feature for diary is also added, which is enabled by gem and interaction between controller and the download.html.erb view.
 
-
+Food Search using API (controller/ view)
+- In the precious iteration, if a user is intersted in the allergens of a particular food and wants to compare its allergens with the user's potential allergens, this food has to been added to the local database first before any query. In this iteration, I modified the search function in the food controller so that the allergen information can be compared without having to add the food to the database in the first place. This feature is modified to satisfy the client's need.
 
 
 
@@ -11,6 +12,8 @@ DiaryEntry (functionality/ view):
 Testing
 
 DiaryEntry (RSpec): Most components of the diary section are tested, including the index page rendering, creating new diary entry, destorying a diary entry, sorting and downloading the diary.
+
+Food (RSPec and Cucumber): Most components of the food section are tested, including the index page rendering, creating new diary entry, editing a food entry and search allergen of a food.
 
 
 
