@@ -10,7 +10,7 @@ DiaryEntry (functionality/ view):
 
 Testing
 
-DiaryEntry (RSpec): The index page of diary is tested, including loading the page, expecting the corrcet render and creating a new entry.
+DiaryEntry (RSpec): Most components of the diary section are tested, including the index page rendering, creating new diary entry, destorying a diary entry, sorting and downloading the diary.
 
 
 
