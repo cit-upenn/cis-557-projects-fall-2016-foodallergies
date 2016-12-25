@@ -18,7 +18,4 @@ class Food < ActiveRecord::Base
     record.errors.add(attr, 'must start with upper case') if value =~ /\A[[:lower:]]/
   end
 
-
-
-
 end
